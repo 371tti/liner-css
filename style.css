@@ -1,0 +1,193 @@
+@font-face {
+    font-family: "UDEV Gothic HSLG";
+    src: url("/static/fonts/UDEVGothicHSLG-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    size-adjust: 100%;
+}
+
+@font-face {
+    font-family: "UDEV Gothic HSLG";
+    src: url("/static/fonts/UDEVGothicHSLG-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    size-adjust: 100%;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+:root {
+    --font-family: "UDEV Gothic HSLG", monospace;
+    --font-size: 0.92rem;
+    --font-size-small: 0.8rem;
+    --transition-duration: 200ms;
+    --transition-function: cubic-bezier(0.85, 0.2, 0, 0.9);
+    --radius-r: 0mm;
+    --frame-inset: 1mm;
+    --frame-padding: 5mm;
+    --content-width: 300mm;
+    --content-width-wide: 200mm;
+    --border-width: 1px;
+
+    color-scheme: dark;
+    --cover-opacity: 0.8;
+    --lightness-step: 0.10;
+
+    --base-red: #c98584;
+    --base-orange: #be8e6e;
+    --base-yellow: #a89a63;
+    --base-green: #7fa586;
+    --base-cyan: #6ca5af;
+    --base-blue: #8c99bc;
+    --base-purple: #a68fb8;
+    --base-pink: #ba89a0;
+
+    --color-bg-0: #121212;
+    --color-bg-1: #1a1a1a;
+    --color-bg-2: #282828;
+
+    --color-text-0: #999999;
+    --color-text-1: #cccccc;
+    --color-text-2: #ffffff;
+
+    --color-red-0: oklch(from var(--base-red) calc(l - var(--lightness-step)) c h);
+    --color-red-1: var(--base-red);
+    --color-red-2: oklch(from var(--base-red) calc(l + var(--lightness-step)) c h);
+
+    --color-orange-0: oklch(from var(--base-orange) calc(l - var(--lightness-step)) c h);
+    --color-orange-1: var(--base-orange);
+    --color-orange-2: oklch(from var(--base-orange) calc(l + var(--lightness-step)) c h);
+
+    --color-yellow-0: oklch(from var(--base-yellow) calc(l - var(--lightness-step)) c h);
+    --color-yellow-1: var(--base-yellow);
+    --color-yellow-2: oklch(from var(--base-yellow) calc(l + var(--lightness-step)) c h);
+
+    --color-green-0: oklch(from var(--base-green) calc(l - var(--lightness-step)) c h);
+    --color-green-1: var(--base-green);
+    --color-green-2: oklch(from var(--base-green) calc(l + var(--lightness-step)) c h);
+
+    --color-cyan-0: oklch(from var(--base-cyan) calc(l - var(--lightness-step)) c h);
+    --color-cyan-1: var(--base-cyan);
+    --color-cyan-2: oklch(from var(--base-cyan) calc(l + var(--lightness-step)) c h);
+
+    --color-blue-0: oklch(from var(--base-blue) calc(l - var(--lightness-step)) c h);
+    --color-blue-1: var(--base-blue);
+    --color-blue-2: oklch(from var(--base-blue) calc(l + var(--lightness-step)) c h);
+
+    --color-purple-0: oklch(from var(--base-purple) calc(l - var(--lightness-step)) c h);
+    --color-purple-1: var(--base-purple);
+    --color-purple-2: oklch(from var(--base-purple) calc(l + var(--lightness-step)) c h);
+
+    --color-pink-0: oklch(from var(--base-pink) calc(l - var(--lightness-step)) c h);
+    --color-pink-1: var(--base-pink);
+    --color-pink-2: oklch(from var(--base-pink) calc(l + var(--lightness-step)) c h);
+
+    --color-accent-0: var(--color-blue-0);
+    --color-accent-1: var(--color-blue-1);
+    --color-accent-2: var(--color-blue-2);
+}
+
+* {
+    font-family: var(--font-family);
+    font-variant-ligatures: common-ligatures contextual;
+    font-feature-settings: "liga" 1, "calt" 1;
+    box-sizing: border-box;
+    position: relative;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-indent: 0;
+
+    ::selection {
+        background-color: var(--color-accent-0);
+        color: var(--color-text-2);
+    }
+
+    ::-moz-selection {
+        background-color: var(--color-bg-1);
+        color: var(--color-text-1);
+    }
+
+    ::-webkit-scrollbar {
+        background-color: var(--color-bg-0);
+        width: 10px;
+        height: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-bg-2);
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-bg-1);
+    }
+
+    transition: background-color var(--transition-duration) var(--transition-timing),
+    color var(--transition-duration) var(--transition-timing),
+    border-color var(--transition-duration) var(--transition-timing),
+    box-shadow var(--transition-duration) var(--transition-timing),
+    fill var(--transition-duration) var(--transition-timing),
+    stroke var(--transition-duration) var(--transition-timing),
+    outline-color var(--transition-duration) var(--transition-timing),
+    text-shadow var(--transition-duration) var(--transition-timing),
+    opacity var(--transition-duration) var(--transition-timing);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: var(--color-bg-0);
+    color: var(--color-text-0);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding: var(--frame-padding);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+article {
+    padding: var(--frame-padding) 0;
+    letter-spacing: 0.1em;
+    line-height: 2.0em;
+    
+    ul {
+        list-style-type: disc;
+        padding-left: 2em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        list-style-position: outside;
+    }
+
+    ol {
+        list-style-type: decimal;
+        padding-left: 2em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        list-style-position: outside;
+    }
+
+    >header {
+        >h1 {
+            font-size: 3rem;
+        }
+
+        >time {
+            font-size: var(--font-size-small);
+        }
+    }
+
+}
