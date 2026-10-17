@@ -1,6 +1,6 @@
 @font-face {
     font-family: "UDEV Gothic HSLG";
-    src: url("/static/fonts/UDEVGothicHSLG-Regular.woff2") format("woff2");
+    src: url("../../static/fonts/UDEVGothicHSLG-Regular.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: "UDEV Gothic HSLG";
-    src: url("/static/fonts/UDEVGothicHSLG-Bold.woff2") format("woff2");
+    src: url("../../static/fonts/UDEVGothicHSLG-Bold.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -395,16 +395,16 @@ blockquote {
         content: "";
         inset-block-start: calc(var(--frame-padding) * 0.5);
         inset-inline-start: calc(var(--frame-padding) * 0.5);
-        mask: url("/static/icons/quote-open.svg") no-repeat center / contain;
-        -webkit-mask: url("/static/icons/quote-open.svg") no-repeat center / contain;
+        mask: url("../../static/icons/quote-open.svg") no-repeat center / contain;
+        -webkit-mask: url("../../static/icons/quote-open.svg") no-repeat center / contain;
     }
 
     &::after {
         content: "";
         inset-block-end: calc(var(--frame-padding) * 0.5);
         inset-inline-end: calc(var(--frame-padding) * 0.5);
-        mask: url("/static/icons/quote.svg") no-repeat center / contain;
-        -webkit-mask: url("/static/icons/quote.svg") no-repeat center / contain;
+        mask: url("../../static/icons/quote.svg") no-repeat center / contain;
+        -webkit-mask: url("../../static/icons/quote.svg") no-repeat center / contain;
     }
 
     &.quote-note,
@@ -430,27 +430,27 @@ blockquote {
     }
 
     &.quote-note {
-        --blockquote-variant-icon: url("/static/icons/info-circle.svg");
+        --blockquote-variant-icon: url("../../static/icons/info-circle.svg");
         background-color: rgb(from var(--color-cyan-1) r g b / var(--color-tint-opacity));
     }
 
     &.quote-tip {
-        --blockquote-variant-icon: url("/static/icons/bulb.svg");
+        --blockquote-variant-icon: url("../../static/icons/bulb.svg");
         background-color: rgb(from var(--color-yellow-1) r g b / var(--color-tint-opacity));
     }
 
     &.quote-warning {
-        --blockquote-variant-icon: url("/static/icons/alert-triangle.svg");
+        --blockquote-variant-icon: url("../../static/icons/alert-triangle.svg");
         background-color: rgb(from var(--color-red-1) r g b / var(--color-tint-opacity));
     }
 
     &.quote-important {
-        --blockquote-variant-icon: url("/static/icons/exclamation-mark.svg");
+        --blockquote-variant-icon: url("../../static/icons/exclamation-mark.svg");
         background-color: rgb(from var(--color-purple-1) r g b / var(--color-tint-opacity));
     }
 
     &.quote-caution {
-        --blockquote-variant-icon: url("/static/icons/circle-rectangle.svg");
+        --blockquote-variant-icon: url("../../static/icons/circle-rectangle.svg");
         background-color: rgb(from var(--color-red-1) r g b / var(--color-tint-opacity));
     }
 }
@@ -622,8 +622,8 @@ fieldset {
                 width: 0.85rem;
                 height: 0.85rem;
                 background-color: var(--color-text-1);
-                mask: url("/static/icons/chevron-down.svg") no-repeat center / contain;
-                -webkit-mask: url("/static/icons/chevron-down.svg") no-repeat center / contain;
+                mask: url("../../static/icons/chevron-down.svg") no-repeat center / contain;
+                -webkit-mask: url("../../static/icons/chevron-down.svg") no-repeat center / contain;
                 pointer-events: none;
             }
         }
@@ -1018,7 +1018,7 @@ meter {
 
 /* details and summary styles */
 details {
-    --details-summary-icon: url("/static/icons/chevron-right.svg");
+    --details-summary-icon: url("../../static/icons/chevron-right.svg");
 
     margin: var(--frame-padding) 0;
     padding: calc(var(--frame-padding) * 0.5) var(--frame-padding) calc(var(--frame-padding) * 0.5) 0;
@@ -1028,7 +1028,7 @@ details {
 
     &[open] {
         border-color: var(--color-accent-1);
-        --details-summary-icon: url("/static/icons/chevron-down.svg");
+        --details-summary-icon: url("../../static/icons/chevron-down.svg");
     }
 
     >summary {

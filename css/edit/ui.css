@@ -440,7 +440,7 @@ input[type="search"].ui-search-input,
 }
 
 .ui-alert {
-    --ui-alert-icon: url("/static/icons/info-circle.svg");
+    --ui-alert-icon: url("../../static/icons/info-circle.svg");
 
     display: grid;
     grid-template-columns: auto minmax(0, 1fr) auto;
@@ -452,19 +452,19 @@ input[type="search"].ui-search-input,
 }
 
 .ui-alert.ui-state--info {
-    --ui-alert-icon: url("/static/icons/info-circle.svg");
+    --ui-alert-icon: url("../../static/icons/info-circle.svg");
 }
 
 .ui-alert.ui-state--warning {
-    --ui-alert-icon: url("/static/icons/alert-triangle.svg");
+    --ui-alert-icon: url("../../static/icons/alert-triangle.svg");
 }
 
 .ui-alert.ui-state--success {
-    --ui-alert-icon: url("/static/icons/check.svg");
+    --ui-alert-icon: url("../../static/icons/check.svg");
 }
 
 .ui-alert.ui-state--danger {
-    --ui-alert-icon: url("/static/icons/exclamation-mark.svg");
+    --ui-alert-icon: url("../../static/icons/exclamation-mark.svg");
 }
 
 .ui-alert-mark {
@@ -1191,8 +1191,8 @@ a.ui-avatar {
     width: 0.85rem;
     height: 0.85rem;
     background-color: currentColor;
-    mask: url("/static/icons/chevron-down.svg") no-repeat center / contain;
-    -webkit-mask: url("/static/icons/chevron-down.svg") no-repeat center / contain;
+    mask: url("../../static/icons/chevron-down.svg") no-repeat center / contain;
+    -webkit-mask: url("../../static/icons/chevron-down.svg") no-repeat center / contain;
 }
 
 .ui-button--large {
@@ -2397,8 +2397,8 @@ a.ui-avatar {
     width: 0.9rem;
     height: 0.9rem;
     background-color: currentColor;
-    mask: url("/static/icons/close.svg") no-repeat center / contain;
-    -webkit-mask: url("/static/icons/close.svg") no-repeat center / contain;
+    mask: url("../../static/icons/close.svg") no-repeat center / contain;
+    -webkit-mask: url("../../static/icons/close.svg") no-repeat center / contain;
 }
 
 .ui-map-search-clear[hidden],

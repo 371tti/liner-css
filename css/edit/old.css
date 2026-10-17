@@ -1,6 +1,6 @@
 @font-face {
     font-family: "UDEV Gothic HSLG";
-    src: url("/static/fonts/UDEVGothicHSLG-Regular.woff2") format("woff2");
+    src: url("../../static/fonts/UDEVGothicHSLG-Regular.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: "UDEV Gothic HSLG";
-    src: url("/static/fonts/UDEVGothicHSLG-Bold.woff2") format("woff2");
+    src: url("../../static/fonts/UDEVGothicHSLG-Bold.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -310,8 +310,8 @@ blockquote.quote-note::before {
     top: 6mm;
 
     background-color: var(--color-text-0);
-    mask: url("/static/icons/info-circle.svg") no-repeat center / contain;
-    -webkit-mask: url("/static/icons/info-circle.svg") no-repeat center / contain;
+    mask: url("../../static/icons/info-circle.svg") no-repeat center / contain;
+    -webkit-mask: url("../../static/icons/info-circle.svg") no-repeat center / contain;
 }
 
 blockquote.quote-note::after {
@@ -334,8 +334,8 @@ blockquote.quote-tip::before {
     top: 6mm;
 
     background-color: var(--color-text-0);
-    mask: url("/static/icons/bulb.svg") no-repeat center / contain;
-    -webkit-mask: url("/static/icons/bulb.svg") no-repeat center / contain;
+    mask: url("../../static/icons/bulb.svg") no-repeat center / contain;
+    -webkit-mask: url("../../static/icons/bulb.svg") no-repeat center / contain;
 }
 
 blockquote.quote-tip::after {
@@ -358,8 +358,8 @@ blockquote.quote-warning::before {
     top: 6mm;
 
     background-color: var(--color-text-0);
-    mask: url("/static/icons/alert-triangle.svg") no-repeat center / contain;
-    -webkit-mask: url("/static/icons/alert-triangle.svg") no-repeat center / contain;
+    mask: url("../../static/icons/alert-triangle.svg") no-repeat center / contain;
+    -webkit-mask: url("../../static/icons/alert-triangle.svg") no-repeat center / contain;
 }
 
 blockquote.quote-warning::after {
@@ -382,8 +382,8 @@ blockquote.quote-important::before {
     top: 6mm;
 
     background-color: var(--color-text-0);
-    mask: url("/static/icons/exclamation-mark.svg") no-repeat center / contain;
-    -webkit-mask: url("/static/icons/exclamation-mark.svg") no-repeat center / contain;
+    mask: url("../../static/icons/exclamation-mark.svg") no-repeat center / contain;
+    -webkit-mask: url("../../static/icons/exclamation-mark.svg") no-repeat center / contain;
 }
 
 blockquote.quote-important::after {
@@ -406,8 +406,8 @@ blockquote.quote-caution::before {
     top: 6mm;
 
     background-color: var(--color-text-0);
-    mask: url("/static/icons/circle-rectangle.svg") no-repeat center / contain;
-    -webkit-mask: url("/static/icons/circle-rectangle.svg") no-repeat center / contain;
+    mask: url("../../static/icons/circle-rectangle.svg") no-repeat center / contain;
+    -webkit-mask: url("../../static/icons/circle-rectangle.svg") no-repeat center / contain;
 }
 
 blockquote.quote-caution::after {
@@ -606,8 +606,8 @@ a.heading-link::after {
     opacity: 0;
     transition: opacity var(--transition-duration) var(--transition-timing);
     background-color: currentColor;
-    mask: url("/static/icons/link.svg") no-repeat center / contain;
-    -webkit-mask: url("/static/icons/link.svg") no-repeat center / contain;
+    mask: url("../../static/icons/link.svg") no-repeat center / contain;
+    -webkit-mask: url("../../static/icons/link.svg") no-repeat center / contain;
     pointer-events: none;
 }
 

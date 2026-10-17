@@ -20,6 +20,10 @@ lightningcss --minify css/edit/layout.css --output-file css/optimized/layout.css
 lightningcss --minify css/edit/ui.css --output-file css/optimized/ui.css
 ```
 
+### GitHub Pages
+
+GitHub Pages のプロジェクトサイトはリポジトリ名のパス配下で配信されるため、アセット参照にはドメイン直下の `/static/...` を使わず、各ファイルからの相対パスを使います。CSS内の `../../static/...` とHTML内の相対パスを保つことで、プロジェクト名が変わってもアイコンやフォントを読み込めます。
+
 ### 最適化オプション
 
 - `--minify` はCSSを圧縮し、値の短縮や隣接ルールの統合などを行います。
