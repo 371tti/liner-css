@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#121212" />
+    <title>地図 | Liner UI Demo</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../layout.css" />
+    <link rel="stylesheet" href="../ui.css" />
+</head>
+
+<body>
+    <main class="ui-map-app" data-map-style="day">
+        <div class="ui-map-viewport" data-map-viewport aria-label="東京の街の地図">
+            <div class="ui-map-world" data-map-world>
+                <svg class="ui-map-art" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
+                    <rect width="1000" height="1000" fill="var(--map-land)" />
+                    <path d="M560 690c120-62 173-54 240 4s122 51 200 20v286H465c50-91 17-242 95-310Z" fill="var(--map-water)" />
+                    <path d="M-60 160 1060 650M-80 690 1080 300M208-80 700 1080M730-60 430 1080" fill="none" stroke="var(--map-road-edge)" stroke-width="50" />
+                    <path d="M-60 160 1060 650M-80 690 1080 300M208-80 700 1080M730-60 430 1080" fill="none" stroke="var(--map-road)" stroke-width="39" />
+                    <path d="M-30 432h1060M-30 836h1060M74-30v1060M432-30v1060M880-30v1060" fill="none" stroke="var(--map-road-edge)" stroke-width="30" />
+                    <path d="M-30 432h1060M-30 836h1060M74-30v1060M432-30v1060M880-30v1060" fill="none" stroke="var(--map-road)" stroke-width="22" />
+                    <g fill="var(--map-block)">
+                        <path d="M108 74h92v92h-92zM250 55h132v82H250zM475 68h110v95H475zM786 65h78v116h-78z" />
+                        <path d="M102 226h112v122H102zM274 220h120v112H274zM480 238h132v104H480zM765 220h105v140H765z" />
+                        <path d="M94 494h120v112H94zM260 488h132v128H260zM466 490h125v116H466zM782 488h102v125H782z" />
+                        <path d="M120 740h92v70h-92zM270 722h124v92H270zM440 720h120v92H440z" />
+                    </g>
+                    <g fill="var(--map-green)">
+                        <path d="M86 560c46-18 82 5 112 38l-18 75-98-3zM530 94h122v100H530zM680 716c30-24 73-26 115-3l-9 69-80 30z" />
+                        <path d="M306 366c47-40 98-34 127-1l-12 64-91 20zM664 450c52-26 94-14 119 18l-21 64-93-8z" />
+                    </g>
+                    <g fill="none" stroke="var(--map-road-detail)" stroke-width="7" stroke-linecap="round">
+                        <path d="M222 20v950M400 20v950M620 20v950M960 20v950M20 372h960M20 644h960" />
+                        <path d="M118 180h220M470 212h260M110 704h280M702 405h200" />
+                    </g>
+                    <g fill="var(--map-label)" font-family="sans-serif" font-size="22" letter-spacing="2">
+                        <text x="110" y="115">NORTH PARK</text>
+                        <text x="503" y="128">CITY MUSEUM</text>
+                        <text x="770" y="292">OLD TOWN</text>
+                        <text x="276" y="563">CENTRAL MARKET</text>
+                        <text x="672" y="842">RIVERSIDE</text>
+                        <text x="464" y="934">CENTRAL STATION</text>
+                    </g>
+                    <path class="ui-map-route-outline" data-map-route-path d="M490 630 445 592 400 570" fill="none" stroke="var(--color-bg-0)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="ui-map-route" data-map-route-path d="M490 630 445 592 400 570" fill="none" stroke="var(--color-accent-1)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <button class="ui-map-marker" type="button" data-map-place="north-coffee" style="--map-x: 40%; --map-y: 57%;" aria-label="北口コーヒーを選択"><span>1</span></button>
+                <button class="ui-map-marker" type="button" data-map-place="city-museum" style="--map-x: 53%; --map-y: 27%;" aria-label="市立美術館を選択"><span>2</span></button>
+                <button class="ui-map-marker" type="button" data-map-place="central-park" style="--map-x: 18%; --map-y: 17%;" aria-label="中央公園を選択"><span>3</span></button>
+                <button class="ui-map-marker" type="button" data-map-place="station" style="--map-x: 44%; --map-y: 86%;" aria-label="中央駅を選択"><span>4</span></button>
+                <span class="ui-map-user-location" data-user-location aria-label="現在地"></span>
+            </div>
+        </div>
+
+        <header class="ui-map-topbar">
+            <a class="ui-map-brand" href="../index.html" aria-label="Liner UI デモ一覧へ">
+                <span class="ui-map-brand-mark" aria-hidden="true">A</span>
+                <span><strong>ATLAS</strong><small>東京 · 日本</small></span>
+            </a>
+            <form class="ui-map-search" role="search">
+                <label class="visually-hidden" for="map-search">場所を検索</label>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" /><path d="m13 13 4 4" /></svg>
+                <input id="map-search" type="search" placeholder="場所、駅、施設を検索" autocomplete="off" />
+                <button class="ui-map-search-clear" type="button" data-map-clear aria-label="検索をクリア" hidden></button>
+                <div class="ui-map-suggestions" data-map-suggestions hidden></div>
+            </form>
+        </header>
+
+        <div class="ui-map-controls" role="group" aria-label="地図の操作">
+            <button class="ui-map-control" type="button" data-map-action="locate" aria-label="現在地へ移動" title="現在地">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3" /></svg>
+            </button>
+            <span class="ui-map-control-divider" aria-hidden="true"></span>
+            <button class="ui-map-control" type="button" data-map-action="zoom-in" aria-label="拡大" title="拡大">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5M10.5 7v7M7 10.5h7" /></svg>
+            </button>
+            <button class="ui-map-control" type="button" data-map-action="zoom-out" aria-label="縮小" title="縮小">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5M7 10.5h7" /></svg>
+            </button>
+            <span class="ui-map-control-divider" aria-hidden="true"></span>
+            <button class="ui-map-control" type="button" data-map-action="layers" aria-label="地図の配色を切り替え" aria-pressed="false" title="地図の配色">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 16l9 5 9-5" /></svg>
+            </button>
+        </div>
+
+        <section class="ui-map-place-card" data-map-card aria-label="選択した場所">
+            <button class="ui-map-card-toggle" type="button" data-map-expand aria-label="場所の詳細を折りたたむ" aria-expanded="true">
+                <span aria-hidden="true"></span>
+            </button>
+            <div class="ui-map-place-heading">
+                <div>
+                    <p class="ui-map-place-category" data-map-category>CAFE · OPEN NOW</p>
+                    <h1 data-map-title>北口コーヒー</h1>
+                    <p class="ui-map-place-meta" data-map-meta>自家焙煎 · 08:00–19:00 · 徒歩3分</p>
+                </div>
+                <button class="ui-map-save" type="button" data-map-save aria-label="北口コーヒーを保存" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4.5h12v16l-6-4-6 4z" /></svg>
+                </button>
+            </div>
+            <div class="ui-map-place-actions">
+                <button class="ui-button-primary" type="button" data-map-route>ルートを表示</button>
+                <button class="ui-button-secondary" type="button" data-map-share>場所を共有</button>
+            </div>
+        </section>
+
+        <p class="ui-map-toast" data-map-toast role="status" aria-live="polite" hidden></p>
+    </main>
+    <script src="map.js" defer></script>
+</body>
+
+</html>

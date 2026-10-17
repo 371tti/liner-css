@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>UIパターン | Liner CSS</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../layout.css" />
+    <link rel="stylesheet" href="../ui.css" />
+</head>
+
+<body>
+    <header class="ui-toolbar flex-row x-between y-center max-w-wide">
+        <a class="ui-brand" href="../index.html">
+            <span class="ui-brand-mark" aria-hidden="true">L</span>
+            <span class="ui-brand-name">Liner CSS <small class="ui-brand-caption">UI PATTERNS</small></span>
+        </a>
+        <nav class="ui-toolbar-nav" aria-label="デモページ">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="components.html" aria-current="page">UIパターン</a>
+            <a href="projects.html">プロジェクト</a>
+            <a href="inbox.html">受信トレイ</a>
+            <a href="settings.html">設定</a>
+        </nav>
+    </header>
+
+    <main class="layout-stack gap-2 py-2 layout-container-wide">
+        <section class="layout-stack gap-1 m-0">
+            <p class="ui-eyebrow">COMPONENT LIBRARY</p>
+            <h1 class="ui-display-title">UIパターン</h1>
+            <p class="ui-description">フォームや通知、データ一覧に加えて、タスクボードとカレンダーの表示例を確認できます。</p>
+        </section>
+
+        <section class="ui-divided-section" aria-labelledby="navigation-title">
+            <div class="ui-heading-row">
+                <div>
+                    <p class="ui-eyebrow">01 / NAVIGATION</p>
+                    <h2 class="ui-heading-title" id="navigation-title">ナビゲーション</h2>
+                </div>
+            </div>
+
+            <div class="ui-panel">
+                <nav class="ui-breadcrumbs" aria-label="パンくずリスト">
+                    <a href="#navigation-title">ワークスペース</a>
+                    <span aria-hidden="true">/</span>
+                    <a href="#filters-title">プロジェクト</a>
+                    <span aria-hidden="true">/</span>
+                    <span aria-current="page">UIキット</span>
+                </nav>
+
+                <nav class="ui-tabs" aria-label="プロジェクトの表示切替">
+                    <a class="ui-tab" href="#navigation-title" aria-current="page">概要</a>
+                    <a class="ui-tab" href="#activity-title">アクティビティ <span class="ui-count">4</span></a>
+                    <a class="ui-tab" href="#disclosure-title">設定</a>
+                </nav>
+            </div>
+        </section>
+
+        <section class="ui-divided-section" aria-labelledby="actions-title">
+            <div class="ui-heading-row">
+                <div>
+                    <p class="ui-eyebrow">02 / ACTIONS</p>
+                    <h2 class="ui-heading-title" id="actions-title">操作と状態</h2>
+                </div>
+                <span class="ui-badge ui-state--neutral">5 variants</span>
+            </div>
+
+            <div class="grid-2 tablet-grid-2 mobile-grid-1 m-0">
+                <article class="ui-panel">
+                    <h3 class="ui-panel-title">ボタン</h3>
+                    <div class="ui-inline-group">
+                        <button class="ui-button-primary" type="button">保存する</button>
+                        <button class="ui-button-secondary" type="button">キャンセル</button>
+                        <button class="ui-button-quiet" type="button">その他</button>
+                        <button class="ui-button-danger" type="button">削除</button>
+                        <button class="ui-icon-button" type="button" aria-label="その他の操作">•••</button>
+                        <button type="button" disabled>無効</button>
+                    </div>
+                </article>
+
+                <article class="ui-panel">
+                    <h3 class="ui-panel-title">ステータス</h3>
+                    <div class="ui-inline-group" aria-label="ステータスの例">
+                        <span class="ui-badge ui-state--success">完了</span>
+                        <span class="ui-badge ui-state--warning">確認待ち</span>
+                        <span class="ui-badge ui-state--danger">エラー</span>
+                        <span class="ui-badge ui-state--neutral">下書き</span>
+                        <span class="ui-badge ui-state--info">新着</span>
+                    </div>
+                    <div class="ui-separated-row">
+                        <span class="ui-helper-label">担当者</span>
+                        <div class="ui-avatar-group" aria-label="担当者5名">
+                            <span class="ui-avatar ui-avatar-blue" aria-hidden="true">葵</span>
+                            <span class="ui-avatar ui-avatar-purple" aria-hidden="true">花</span>
+                            <span class="ui-avatar ui-avatar-green" aria-hidden="true">陸</span>
+                            <span class="ui-avatar ui-state--neutral">+2</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="ui-divided-section" aria-labelledby="feedback-title">
+            <div class="ui-heading-row">
+                <div>
+                    <p class="ui-eyebrow">03 / FEEDBACK</p>
+                    <h2 class="ui-heading-title" id="feedback-title">通知とフィードバック</h2>
+                </div>
+            </div>
+
+            <div class="grid-2 tablet-grid-2 mobile-grid-1 m-0">
+                <div class="ui-alert ui-state--info" role="status">
+                    <span class="ui-alert-mark" aria-hidden="true"></span>
+                    <div><strong>変更を保存しました</strong><p>最新の内容がワークスペースに反映されています。</p></div>
+                    <button class="ui-dismiss" type="button" aria-label="通知を閉じる">×</button>
+                </div>
+                <div class="ui-alert ui-state--warning" role="status">
+                    <span class="ui-alert-mark" aria-hidden="true"></span>
+                    <div><strong>確認が必要です</strong><p>請求先情報を確認してから続行してください。</p></div>
+                    <button class="ui-dismiss" type="button" aria-label="通知を閉じる">×</button>
+                </div>
+                <div class="ui-alert ui-state--success" role="status">
+                    <span class="ui-alert-mark" aria-hidden="true"></span>
+                    <div><strong>同期が完了しました</strong><p>すべてのファイルが最新の状態です。</p></div>
+                    <button class="ui-dismiss" type="button" aria-label="通知を閉じる">×</button>
+                </div>
+                <div class="ui-alert ui-state--danger" role="alert">
+                    <span class="ui-alert-mark" aria-hidden="true"></span>
+                    <div><strong>決済に失敗しました</strong><p>支払い方法を更新して再度お試しください。</p></div>
+                    <button class="ui-dismiss" type="button" aria-label="通知を閉じる">×</button>
+                </div>
+                <div class="ui-toast" role="status">
+                    <span class="ui-status-dot" aria-hidden="true"></span>
+                    <span>エクスポートの準備ができました</span>
+                    <a class="ui-more-link" href="#orders">ダウンロード</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="ui-divided-section" aria-labelledby="filters-title">
+            <div class="ui-heading-row">
+                <div>
+                    <p class="ui-eyebrow">04 / DATA</p>
+                    <h2 class="ui-heading-title" id="filters-title">フィルターとデータ一覧</h2>
+                </div>
+                <button class="ui-button-secondary" type="button">CSVを書き出す</button>
+            </div>
+
+            <article class="ui-panel ui-panel--flush" id="orders">
+                <form class="ui-filter-bar" action="#orders" method="get">
+                    <label>
+                        <span class="ui-helper-label">検索</span>
+                        <input type="search" name="q" placeholder="注文番号または顧客名" />
+                    </label>
+                    <label>
+                        <span class="ui-helper-label">ステータス</span>
+                        <select name="status">
+                            <option>すべて</option>
+                            <option>処理中</option>
+                            <option>完了</option>
+                            <option>キャンセル</option>
+                        </select>
+                    </label>
+                    <button class="ui-button-secondary" type="submit">絞り込む</button>
+                </form>
+
+                <div class="ui-scroll-x">
+                    <table class="ui-data-table ui-data-table--selectable">
+                        <caption>最近の注文</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col"><input type="checkbox" aria-label="すべて選択" /></th>
+                                <th scope="col">注文</th>
+                                <th scope="col">顧客</th>
+                                <th scope="col">日付</th>
+                                <th scope="col">金額</th>
+                                <th scope="col">状態</th>
+                                <th scope="col"><span class="visually-hidden">操作</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" aria-label="注文 #10482 を選択" /></td>
+                                <th scope="row">#10482</th>
+                                <td>佐藤 葵</td>
+                                <td><time datetime="2026-10-17">10月17日</time></td>
+                                <td>¥24,800</td>
+                                <td><span class="ui-badge ui-state--success">完了</span></td>
+                                <td><button class="ui-icon-button" type="button" aria-label="#10482 の操作">•••</button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" aria-label="注文 #10481 を選択" /></td>
+                                <th scope="row">#10481</th>
+                                <td>田中 花子</td>
+                                <td><time datetime="2026-10-16">10月16日</time></td>
+                                <td>¥8,400</td>
+                                <td><span class="ui-badge ui-state--warning">処理中</span></td>
+                                <td><button class="ui-icon-button" type="button" aria-label="#10481 の操作">•••</button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" aria-label="注文 #10480 を選択" /></td>
+                                <th scope="row">#10480</th>
+                                <td>鈴木 陸</td>
+                                <td><time datetime="2026-10-16">10月16日</time></td>
+                                <td>¥16,200</td>
+                                <td><span class="ui-badge ui-state--danger">要確認</span></td>
+                                <td><button class="ui-icon-button" type="button" aria-label="#10480 の操作">•••</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <nav class="ui-pagination" aria-label="ページ送り">
+                    <span>全24件中 1〜3件</span>
+                    <div>
+                        <a class="ui-pagination-link" href="#previous" aria-label="前のページ">‹</a>
+                        <a class="ui-pagination-link" href="#page-1" aria-current="page">1</a>
+                        <a class="ui-pagination-link" href="#page-2">2</a>
+                        <a class="ui-pagination-link" href="#page-3">3</a>
+                        <span aria-hidden="true">…</span>
+                        <a class="ui-pagination-link" href="#page-8">8</a>
+                        <a class="ui-pagination-link" href="#next" aria-label="次のページ">›</a>
+                    </div>
+                </nav>
+            </article>
+        </section>
+
+        <section class="ui-divided-section" aria-labelledby="activity-title">
+            <div class="ui-heading-row">
+                <div>
+                    <p class="ui-eyebrow">05 / ACTIVITY</p>
+                    <h2 class="ui-heading-title" id="activity-title">アクティビティ</h2>
+                </div>
+            </div>
+
+            <div class="grid-2 tablet-grid-2 mobile-grid-1 m-0">
+                <article class="ui-panel">
+                    <h3 class="ui-panel-title">最近の更新</h3>
+                    <ol class="ui-timeline">
+                        <li class="ui-timeline-item">
+                            <span class="ui-state--success" aria-hidden="true"></span>
+                            <div><strong>請求書を送信しました</strong><p>佐藤 葵 <time datetime="2026-10-17T10:42">10:42</time></p></div>
+                        </li>
+                        <li class="ui-timeline-item">
+                            <span class="ui-state--info" aria-hidden="true"></span>
+                            <div><strong>新しいメンバーが参加しました</strong><p>田中 花子 <time datetime="2026-10-17T09:18">09:18</time></p></div>
+                        </li>
+                        <li class="ui-timeline-item">
+                            <span class="ui-state--neutral" aria-hidden="true"></span>
+                            <div><strong>プロジェクトを作成しました</strong><p>鈴木 陸 <time datetime="2026-10-16T16:05">昨日</time></p></div>
+                        </li>
+                    </ol>
+                </article>
+
+                <article class="ui-panel ui-empty-state">
+                    <span class="ui-empty-mark" aria-hidden="true">＋</span>
+                    <h3>まだタスクがありません</h3>
+                    <p>最初のタスクを作成すると、ここに一覧が表示されます。</p>
+                    <button class="ui-button-primary" type="button">タスクを作成</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="ui-divided-section" aria-labelledby="disclosure-title">
+            <div class="ui-heading-row">
+                <div>
+                    <p class="ui-eyebrow">06 / DISCLOSURE</p>
+                    <h2 class="ui-heading-title" id="disclosure-title">詳細と進捗</h2>
+                </div>
+            </div>
+
+            <div class="grid-2 tablet-grid-2 mobile-grid-1 m-0">
+                <details class="ui-panel ui-accordion">
+                    <summary>通知設定について</summary>
+                    <p>重要な更新をメールで受け取る設定です。通知の種類は設定ページから変更できます。</p>
+                </details>
+
+                <article class="ui-panel layout-stack gap-1 m-0">
+                    <div class="ui-heading-row ui-heading-row--compact"><strong>オンボーディング</strong><small>3 / 5</small></div>
+                    <progress value="60" max="100" aria-label="オンボーディング 60%">60%</progress>
+                    <p>あと2つのステップでセットアップが完了します。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="ui-divided-section" aria-labelledby="board-title">
+            <div class="ui-heading-row">
+                <div>
+                    <p class="ui-eyebrow">07 / PROJECT BOARD</p>
+                    <h2 class="ui-heading-title" id="board-title">カンバンボード</h2>
+                </div>
+                <button class="ui-button-primary" type="button">タスクを追加</button>
+            </div>
+
+            <div class="grid-4 tablet-grid-2 mobile-grid-1 gap-1 m-0" role="group" aria-label="プロジェクトの進行状況">
+                <section class="ui-panel ui-panel--spacious layout-stack gap-1 m-0" aria-labelledby="planned-title">
+                    <div class="ui-heading-row"><h3 class="ui-panel-title" id="planned-title">予定</h3><span class="ui-count">2</span></div>
+                    <ul class="ui-task-list">
+                        <li>
+                            <article class="ui-task-card">
+                                <div class="ui-inline-group x-between"><span class="ui-badge ui-state--info">デザイン</span><span class="ui-helper-label">WEB-24</span></div>
+                                <h3>購入フローの画面構成</h3>
+                                <p>商品詳細から注文完了までの導線を整理します。</p>
+                                <div class="ui-task-card-meta"><span>佐藤 美咲</span><time datetime="2026-10-20">10月20日</time></div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="ui-task-card">
+                                <div class="ui-inline-group x-between"><span class="ui-badge ui-state--purple">コンテンツ</span><span class="ui-helper-label">WEB-31</span></div>
+                                <h3>メール認証の文言を見直す</h3>
+                                <p>登録後の案内を短くわかりやすくします。</p>
+                                <div class="ui-task-card-meta"><span>鈴木 葵</span><time datetime="2026-10-21">10月21日</time></div>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="ui-panel ui-panel--spacious layout-stack gap-1 m-0" aria-labelledby="active-title">
+                    <div class="ui-heading-row"><h3 class="ui-panel-title" id="active-title">進行中</h3><span class="ui-count">2</span></div>
+                    <ul class="ui-task-list">
+                        <li>
+                            <article class="ui-task-card">
+                                <div class="ui-inline-group x-between"><span class="ui-badge ui-state--warning">開発</span><span class="ui-helper-label">WEB-18</span></div>
+                                <h3>商品詳細ページを実装</h3>
+                                <p>仕様に沿って商品情報と購入操作を組み立てます。</p>
+                                <div class="ui-task-card-meta"><span>高橋 健太</span><span>進捗 72%</span></div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="ui-task-card">
+                                <div class="ui-inline-group x-between"><span class="ui-badge ui-state--info">デザイン</span><span class="ui-helper-label">WEB-22</span></div>
+                                <h3>カート画面のレビュー反映</h3>
+                                <p>チームのコメントを確認してレイアウトを調整します。</p>
+                                <div class="ui-task-card-meta"><span>伊藤 亮</span><time datetime="2026-10-23">10月23日</time></div>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="ui-panel ui-panel--spacious layout-stack gap-1 m-0" aria-labelledby="review-title">
+                    <div class="ui-heading-row"><h3 class="ui-panel-title" id="review-title">レビュー</h3><span class="ui-count">2</span></div>
+                    <ul class="ui-task-list">
+                        <li>
+                            <article class="ui-task-card">
+                                <div class="ui-inline-group x-between"><span class="ui-badge ui-state--warning">確認待ち</span><span class="ui-helper-label">WEB-12</span></div>
+                                <h3>注文完了画面の操作確認</h3>
+                                <p>キーボードでの操作と読み上げを確認します。</p>
+                                <div class="ui-task-card-meta"><span>山田 花子</span><time datetime="2026-10-19">10月19日</time></div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="ui-task-card">
+                                <div class="ui-inline-group x-between"><span class="ui-badge ui-state--info">デザイン</span><span class="ui-helper-label">WEB-15</span></div>
+                                <h3>モバイルナビゲーション</h3>
+                                <p>狭い画面での項目の並びをレビューします。</p>
+                                <div class="ui-task-card-meta"><span>佐藤 美咲</span><time datetime="2026-10-19">10月19日</time></div>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="ui-panel ui-panel--spacious layout-stack gap-1 m-0" aria-labelledby="done-title">
+                    <div class="ui-heading-row"><h3 class="ui-panel-title" id="done-title">完了</h3><span class="ui-count">2</span></div>
+                    <ul class="ui-task-list">
+                        <li>
+                            <article class="ui-task-card">
+                                <div class="ui-inline-group x-between"><span class="ui-badge ui-state--success">完了</span><span class="ui-helper-label">WEB-08</span></div>
+                                <h3>商品一覧のワイヤーフレーム</h3>
+                                <p>一覧表示と絞り込みの基本構成を確定しました。</p>
+                                <div class="ui-task-card-meta"><span>鈴木 葵</span><time datetime="2026-10-15">10月15日</time></div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="ui-task-card">
+                                <div class="ui-inline-group x-between"><span class="ui-badge ui-state--success">完了</span><span class="ui-helper-label">WEB-10</span></div>
+                                <h3>カラーパレットの整理</h3>
+                                <p>状態表示で使う色を共通変数にまとめました。</p>
+                                <div class="ui-task-card-meta"><span>高橋 健太</span><time datetime="2026-10-14">10月14日</time></div>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="ui-divided-section" aria-labelledby="calendar-title">
+            <div class="ui-heading-row">
+                <div>
+                    <p class="ui-eyebrow">08 / CALENDAR</p>
+                    <h2 class="ui-heading-title" id="calendar-title">カレンダー</h2>
+                </div>
+                <div class="ui-action-group">
+                    <button class="ui-button-secondary" type="button" aria-label="前月">前月</button>
+                    <strong>2026年10月</strong>
+                    <button class="ui-button-secondary" type="button" aria-label="次月">次月</button>
+                </div>
+            </div>
+
+            <article class="ui-panel ui-panel--flush">
+                <div class="ui-heading-row p-1">
+                    <nav class="ui-tabs" aria-label="カレンダーの表示">
+                        <a class="ui-tab" href="#calendar-grid" aria-current="page">月</a>
+                        <a class="ui-tab" href="#calendar-grid">週</a>
+                        <a class="ui-tab" href="#calendar-grid">日</a>
+                    </nav>
+                    <button class="ui-button-quiet" type="button">今日</button>
+                </div>
+                <div class="ui-scroll-x" id="calendar-grid">
+                    <table class="ui-calendar" aria-label="2026年10月のチーム予定">
+                        <thead>
+                            <tr>
+                                <th scope="col">月</th><th scope="col">火</th><th scope="col">水</th><th scope="col">木</th><th scope="col">金</th><th scope="col">土</th><th scope="col">日</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="ui-calendar-day ui-calendar-day--muted"><time datetime="2026-09-28">28</time></div></td>
+                                <td><div class="ui-calendar-day ui-calendar-day--muted"><time datetime="2026-09-29">29</time></div></td>
+                                <td><div class="ui-calendar-day ui-calendar-day--muted"><time datetime="2026-09-30">30</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-01">1</time></div><div class="ui-calendar-events"><span class="ui-calendar-event ui-state--info">キックオフ</span></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-02">2</time></div><div class="ui-calendar-events"><span class="ui-calendar-event ui-state--purple">デザイン共有</span></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-03">3</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-04">4</time></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-05">5</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-06">6</time></div><div class="ui-calendar-events"><span class="ui-calendar-event ui-state--warning">試作レビュー</span></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-07">7</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-08">8</time></div><div class="ui-calendar-events"><span class="ui-calendar-event ui-state--info">スプリント確認</span></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-09">9</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-10">10</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-11">11</time></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-12">12</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-13">13</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-14">14</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-15">15</time></div><div class="ui-calendar-events"><span class="ui-calendar-event ui-state--warning">操作確認</span></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-16">16</time></div></td>
+                                <td class="ui-calendar-cell ui-calendar-cell--today"><div class="ui-calendar-day"><time datetime="2026-10-17" aria-current="date">17</time></div><div class="ui-calendar-events"><span class="ui-calendar-event ui-state--success">リリース準備</span></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-18">18</time></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-19">19</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-20">20</time></div><div class="ui-calendar-events"><span class="ui-calendar-event ui-state--success">商品ページ公開</span></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-21">21</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-22">22</time></div><div class="ui-calendar-events"><span class="ui-calendar-event ui-state--purple">ロードマップ共有</span></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-23">23</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-24">24</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-25">25</time></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-26">26</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-27">27</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-28">28</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-29">29</time></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-30">30</time></div><div class="ui-calendar-events"><span class="ui-calendar-event ui-state--warning">月次レビュー</span></div></td>
+                                <td><div class="ui-calendar-day"><time datetime="2026-10-31">31</time></div></td>
+                                <td><div class="ui-calendar-day ui-calendar-day--muted"><time datetime="2026-11-01">1</time></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+        <footer class="ui-toolbar ui-toolbar--bottom flex-row x-between y-center max-w-wide">
+            <span>Liner CSS UI patterns</span>
+            <a href="dashboard.html">ダッシュボードデモへ</a>
+        </footer>
+    </main>
+</body>
+
+</html>

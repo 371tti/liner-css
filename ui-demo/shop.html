@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#121212" />
+    <title>オンラインショップ | Liner UI Demo</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../layout.css" />
+    <link rel="stylesheet" href="../ui.css" />
+</head>
+
+<body>
+    <div class="ui-app-shell">
+        <aside class="ui-sidebar h-screen" aria-label="OBJECTS MARKET">
+            <a class="ui-brand" href="#page-title"><span class="ui-brand-mark" aria-hidden="true">O</span><span class="ui-brand-name">OBJECTS<small class="ui-brand-caption">MARKET</small></span></a>
+            <div class="ui-workspace-switcher min-w-0"><span class="ui-avatar ui-avatar--square ui-avatar-blue" aria-hidden="true">O</span><span class="ui-truncate">Object Market</span></div>
+            <nav class="ui-sidebar-nav" aria-label="ショップ">
+                <span class="ui-nav-caption">SHOP</span>
+                <a class="ui-nav-link" href="#catalog" aria-current="page">商品を見る</a>
+                <a class="ui-nav-link" href="#catalog">お気に入り</a>
+                <a class="ui-nav-link" href="#cart">カート</a>
+            </nav>
+            <div class="ui-status-summary"><span class="ui-status-dot" aria-hidden="true"></span><span>配送先: 東京</span></div>
+        </aside>
+
+        <main class="ui-app-main min-w-0">
+            <header class="ui-topbar"><div class="ui-context-line"><span>Object Market</span><span aria-hidden="true">/</span><strong>商品</strong></div><div class="ui-action-group"><a class="ui-button-secondary" href="#cart">カート <span class="ui-count">2</span></a></div></header>
+            <div class="ui-content-stack--wide">
+        <section class="layout-stack gap-half m-0">
+            <p class="ui-eyebrow">EVERYDAY OBJECTS</p>
+            <div class="ui-heading-row">
+                <div>
+                    <h1 class="ui-display-title" id="page-title">道具を選ぶ</h1>
+                    <p class="ui-description">商品一覧とカートを並べたオンラインショップの例です。</p>
+                </div>
+                <span class="ui-badge ui-state--success">送料無料</span>
+            </div>
+        </section>
+
+        <section class="ui-heading-row" id="catalog">
+            <nav class="ui-tabs" aria-label="商品カテゴリ"><a class="ui-tab" href="#catalog" aria-current="page">すべて</a><a class="ui-tab" href="#catalog">バッグ</a><a class="ui-tab" href="#catalog">デスク</a><a class="ui-tab" href="#catalog">アクセサリー</a></nav>
+            <label class="ui-helper-label">並び替え <select aria-label="商品を並び替え"><option>おすすめ順</option><option>価格の低い順</option></select></label>
+        </section>
+
+        <section class="grid-12 gap-1 m-0 y-start">
+            <div class="grid-3 tablet-grid-2 mobile-grid-1 gap-1 m-0 col-span-9 tablet-col-span-5 mobile-col-span-full">
+                <article class="ui-panel ui-panel--spacious layout-stack gap-half m-0">
+                    <svg width="240" height="150" viewBox="0 0 240 150" role="img" aria-label="青いキャンバストートバッグ">
+                        <rect width="240" height="150" fill="var(--color-bg-2)" /><path d="M72 52h96l12 79H60z" fill="var(--color-blue-1)" stroke="var(--color-text-0)" stroke-width="3" /><path d="M92 56v-9a28 28 0 0 1 56 0v9" fill="none" stroke="var(--color-text-0)" stroke-width="5" />
+                    </svg>
+                    <span class="ui-badge ui-state--info">人気</span><h2 class="ui-panel-title">Everyday Tote</h2><p class="ui-description">軽くて丈夫なキャンバスバッグ。</p><div class="ui-value-row"><strong>¥4,800</strong><button class="ui-button-secondary" type="button">カートに追加</button></div>
+                </article>
+                <article class="ui-panel ui-panel--spacious layout-stack gap-half m-0">
+                    <svg width="240" height="150" viewBox="0 0 240 150" role="img" aria-label="木製のデスクライト">
+                        <rect width="240" height="150" fill="var(--color-bg-2)" /><path d="M64 62h92L126 28H86z" fill="var(--color-yellow-1)" stroke="var(--color-text-0)" stroke-width="3" /><path d="m110 62-21 56m21-56 25 56M76 120h76" fill="none" stroke="var(--color-text-1)" stroke-linecap="round" stroke-width="7" />
+                    </svg>
+                    <span class="ui-badge ui-state--neutral">新着</span><h2 class="ui-panel-title">Arc Desk Light</h2><p class="ui-description">手元をやさしく照らす小さな照明。</p><div class="ui-value-row"><strong>¥8,200</strong><button class="ui-button-secondary" type="button">カートに追加</button></div>
+                </article>
+                <article class="ui-panel ui-panel--spacious layout-stack gap-half m-0">
+                    <svg width="240" height="150" viewBox="0 0 240 150" role="img" aria-label="紫色のノートとペン">
+                        <rect width="240" height="150" fill="var(--color-bg-2)" /><rect x="69" y="28" width="92" height="100" fill="var(--color-purple-1)" stroke="var(--color-text-0)" stroke-width="3" /><path d="M88 54h51m-51 18h51m-51 18h36" stroke="var(--color-bg-0)" stroke-width="3" /><path d="m174 38 12 10-46 57-14 5 3-15z" fill="var(--color-cyan-1)" stroke="var(--color-text-0)" stroke-width="2" />
+                    </svg>
+                    <span class="ui-badge ui-state--neutral">残りわずか</span><h2 class="ui-panel-title">Field Notes</h2><p class="ui-description">書き心地にこだわった方眼ノート。</p><div class="ui-value-row"><strong>¥1,200</strong><button class="ui-button-secondary" type="button">カートに追加</button></div>
+                </article>
+            </div>
+
+            <aside class="ui-panel ui-panel--spacious col-span-3 tablet-col-span-3 mobile-col-span-full" id="cart">
+                <p class="ui-eyebrow">YOUR CART</p><h2 class="ui-panel-title">カート <span class="ui-count">2</span></h2>
+                <div class="ui-separated-row"><span>Everyday Tote × 1</span><strong>¥4,800</strong></div>
+                <div class="ui-separated-row"><span>Field Notes × 2</span><strong>¥2,400</strong></div>
+                <div class="ui-value-row ui-value-row--divider"><strong>小計</strong><strong>¥7,200</strong></div>
+                <p class="ui-helper-label">あと¥2,800で送料無料</p>
+                <progress class="ui-progress-bar ui-state--info w-100" value="72" max="100" aria-label="送料無料までの達成度">72%</progress>
+                <button class="ui-button-primary w-100" type="button">購入手続きへ</button>
+            </aside>
+        </section>
+
+            </div>
+        </main>
+
+        <nav class="ui-mobile-nav" aria-label="オンラインショップ">
+            <a href="#catalog" aria-current="page"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/buildings.svg')" aria-hidden="true"></span><span>ショップ</span></a>
+            <a href="#catalog"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/search.svg')" aria-hidden="true"></span><span>検索</span></a>
+            <a href="#catalog"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/bookmark.svg')" aria-hidden="true"></span><span>保存</span></a>
+            <a href="#cart"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/clipboard.svg')" aria-hidden="true"></span><span>カート</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

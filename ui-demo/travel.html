@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#121212" />
+    <title>旅行予約 | Liner UI Demo</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../layout.css" />
+    <link rel="stylesheet" href="../ui.css" />
+</head>
+
+<body>
+    <div class="ui-app-shell">
+        <aside class="ui-sidebar h-screen" aria-label="RAIL JOURNEYS">
+            <a class="ui-brand" href="#page-title"><span class="ui-brand-mark" aria-hidden="true">R</span><span class="ui-brand-name">RAIL<small class="ui-brand-caption">JOURNEYS</small></span></a>
+            <div class="ui-workspace-switcher min-w-0"><span class="ui-avatar ui-avatar--square ui-avatar-blue" aria-hidden="true">日</span><span class="ui-truncate">Japan rail</span></div>
+            <nav class="ui-sidebar-nav" aria-label="旅行">
+                <span class="ui-nav-caption">TRAVEL</span>
+                <a class="ui-nav-link" href="#search" aria-current="page">列車を探す</a>
+                <a class="ui-nav-link" href="#summary">予約した旅程</a>
+                <a class="ui-nav-link" href="#summary">チケット</a>
+            </nav>
+            <div class="ui-status-summary"><span class="ui-status-dot" aria-hidden="true"></span><span>旅程を検索できます</span></div>
+        </aside>
+
+        <main class="ui-app-main min-w-0">
+            <header class="ui-topbar"><div class="ui-context-line"><span>Japan rail</span><span aria-hidden="true">/</span><strong>列車検索</strong></div><div class="ui-action-group"><a class="ui-more-link" href="#summary">予約一覧</a></div></header>
+            <div class="ui-content-stack--wide">
+        <section class="layout-stack gap-half m-0">
+            <p class="ui-eyebrow">PLAN YOUR JOURNEY</p>
+            <div class="ui-heading-row">
+                <div>
+                    <h1 class="ui-display-title" id="page-title">列車を探す</h1>
+                    <p class="ui-description">検索条件と候補を見比べる旅行予約画面の例です。</p>
+                </div>
+                <span class="ui-badge ui-state--info">片道 · 1名</span>
+            </div>
+        </section>
+
+        <form class="ui-filter-bar" aria-label="列車の検索条件" id="search">
+            <label>出発駅<input type="text" value="東京" /></label>
+            <label>到着駅<input type="text" value="京都" /></label>
+            <label>出発日<input type="date" value="2026-11-12" /></label>
+            <label>人数<select><option>大人 1名</option><option>大人 2名</option><option>大人 2名・子ども 1名</option></select></label>
+            <button class="ui-button-primary" type="button">列車を検索</button>
+        </form>
+
+        <section class="grid-12 gap-1 m-0 y-start">
+            <div class="layout-stack gap-1 m-0 col-span-8 tablet-col-span-5 mobile-col-span-full">
+                <div class="ui-heading-row"><div><p class="ui-eyebrow">11月12日 木曜日</p><h2 class="ui-heading-title">東京 → 京都 <span class="ui-helper-label">3件の候補</span></h2></div><button class="ui-button-secondary" type="button">おすすめ順</button></div>
+                <article class="ui-panel ui-panel--spacious">
+                    <div class="ui-heading-row"><span class="ui-badge ui-state--success">おすすめ</span><span class="ui-helper-label">のぞみ 215号</span></div>
+                    <div class="ui-value-row"><strong>09:12</strong><span>2時間 14分 · 直通</span><strong>11:26</strong></div>
+                    <div class="ui-value-row"><span>東京</span><span class="ui-helper-label">直通</span><span>京都</span></div>
+                    <div class="ui-separated-row"><span>指定席 · 空席あり</span><div class="ui-action-group"><strong>¥13,320</strong><button class="ui-button-primary" type="button">選択</button></div></div>
+                </article>
+                <article class="ui-panel ui-panel--spacious">
+                    <div class="ui-heading-row"><span class="ui-badge ui-state--info">早割対象</span><span class="ui-helper-label">のぞみ 219号</span></div>
+                    <div class="ui-value-row"><strong>10:12</strong><span>2時間 16分 · 直通</span><strong>12:28</strong></div>
+                    <div class="ui-value-row"><span>東京</span><span class="ui-helper-label">直通</span><span>京都</span></div>
+                    <div class="ui-separated-row"><span>指定席 · 残りわずか</span><div class="ui-action-group"><strong>¥12,800</strong><button class="ui-button-secondary" type="button">選択</button></div></div>
+                </article>
+                <article class="ui-panel ui-panel--spacious">
+                    <div class="ui-heading-row"><span class="ui-badge ui-state--neutral">自由席あり</span><span class="ui-helper-label">ひかり 641号</span></div>
+                    <div class="ui-value-row"><strong>11:03</strong><span>2時間 45分 · 直通</span><strong>13:48</strong></div>
+                    <div class="ui-value-row"><span>東京</span><span class="ui-helper-label">直通</span><span>京都</span></div>
+                    <div class="ui-separated-row"><span>自由席 · 空席あり</span><div class="ui-action-group"><strong>¥12,650</strong><button class="ui-button-secondary" type="button">選択</button></div></div>
+                </article>
+            </div>
+
+            <aside class="ui-panel ui-panel--spacious col-span-4 tablet-col-span-3 mobile-col-span-full" id="summary">
+                <p class="ui-eyebrow">TRIP SUMMARY</p><h2 class="ui-panel-title">旅程の概要</h2>
+                <div class="ui-separated-row"><span>出発</span><strong>11月12日 09:12</strong></div>
+                <div class="ui-separated-row"><span>到着</span><strong>11月12日 11:26</strong></div>
+                <div class="ui-separated-row"><span>乗車時間</span><strong>2時間 14分</strong></div>
+                <div class="ui-value-row ui-value-row--divider"><strong>合計</strong><strong>¥13,320</strong></div>
+                <p class="ui-helper-label">列車を選択すると旅程に追加されます。</p>
+                <button class="ui-button-primary w-100" type="button" disabled>予約へ進む</button>
+            </aside>
+        </section>
+
+            </div>
+        </main>
+
+        <nav class="ui-mobile-nav" aria-label="旅行予約">
+            <a href="#search" aria-current="page"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/world.svg')" aria-hidden="true"></span><span>検索</span></a>
+            <a href="#summary"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/history.svg')" aria-hidden="true"></span><span>旅程</span></a>
+            <a href="#summary"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/bookmark.svg')" aria-hidden="true"></span><span>保存</span></a>
+            <a href="#summary"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/file-info.svg')" aria-hidden="true"></span><span>チケット</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

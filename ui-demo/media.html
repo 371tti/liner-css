@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#121212" />
+    <title>メディアプレーヤー | Liner UI Demo</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../layout.css" />
+    <link rel="stylesheet" href="../ui.css" />
+</head>
+
+<body>
+    <div class="ui-app-shell ui-music-app">
+        <aside class="ui-sidebar h-screen" aria-label="WAVE MUSIC">
+            <a class="ui-brand" href="#media-home">
+                <span class="ui-brand-mark" aria-hidden="true">W</span>
+                <span class="ui-brand-name">WAVE<small class="ui-brand-caption">MUSIC</small></span>
+            </a>
+
+            <div class="ui-workspace-switcher min-w-0">
+                <span class="ui-avatar ui-avatar--square ui-avatar-blue" aria-hidden="true">M</span>
+                <span class="ui-truncate">Personal library</span>
+            </div>
+
+            <nav class="ui-sidebar-nav" aria-label="音楽アプリ">
+                <span class="ui-nav-caption">LIBRARY</span>
+                <a class="ui-nav-link" href="#media-home" data-media-view="home" aria-current="page">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="2.5" width="6" height="6" /><rect x="11.5" y="2.5" width="6" height="6" /><rect x="2.5" y="11.5" width="6" height="6" /><rect x="11.5" y="11.5" width="6" height="6" /></svg>
+                    <span>ホーム</span>
+                </a>
+                <a class="ui-nav-link" href="#media-search" data-media-view="search">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" /><path d="m13 13 4 4" /></svg>
+                    <span>検索</span>
+                </a>
+                <a class="ui-nav-link" href="#media-library" data-media-view="library">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 3.5h14v13H3zM6 6.5h8M6 9.5h8M6 12.5h5" /></svg>
+                    <span>マイライブラリ</span>
+                </a>
+                <span class="ui-nav-caption">PLAYLISTS</span>
+                <a class="ui-nav-link" href="#media-queue" data-media-view="queue">再生キュー</a>
+                <a class="ui-nav-link" href="#media-library" data-media-view="library">お気に入りの曲</a>
+            </nav>
+
+            <div class="ui-status-summary"><span class="ui-status-dot" aria-hidden="true"></span><span>ライブラリを同期済み</span></div>
+        </aside>
+
+        <main class="ui-app-main min-w-0">
+            <header class="ui-topbar">
+                <div class="ui-context-line"><span>WAVE MUSIC</span><span aria-hidden="true">/</span><strong data-media-heading>ホーム</strong></div>
+                <div class="ui-action-group"><button class="ui-button-secondary" type="button" data-open-queue>キューを開く</button></div>
+            </header>
+
+            <div class="ui-content-stack--wide ui-media-content">
+                <section class="ui-media-screen" id="media-home" data-media-screen="home" aria-labelledby="page-title">
+                    <header class="ui-heading-row ui-heading-row--end">
+                        <div>
+                            <p class="ui-eyebrow">WEDNESDAY EVENING</p>
+                            <h1 class="ui-display-title" id="page-title">こんばんは</h1>
+                            <p class="ui-description">今の気分に合う音楽を見つけましょう。</p>
+                        </div>
+                    </header>
+
+                    <article class="ui-music-feature">
+                        <span class="ui-album-art ui-album-art--violet ui-music-feature-art" aria-hidden="true"></span>
+                        <div class="ui-music-feature-copy">
+                            <p class="ui-eyebrow">TONIGHT'S MIX</p>
+                            <h2>Night Drive</h2>
+                            <p>静かな夜に聴きたい、あなたのためのミックス。</p>
+                            <div class="ui-action-group">
+                                <button class="ui-button-primary" type="button" data-play-track="night-drive">再生する</button>
+                                <button class="ui-button-secondary" type="button" data-media-view="search">曲を探す</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <section class="ui-music-section" aria-labelledby="recent-title">
+                        <div class="ui-heading-row"><h2 class="ui-panel-title" id="recent-title">最近再生した曲</h2><a class="ui-more-link" href="#media-library" data-media-view="library">すべて表示</a></div>
+                        <div class="ui-music-card-grid" data-track-cards></div>
+                    </section>
+                </section>
+
+                <section class="ui-media-screen" id="media-search" data-media-screen="search" aria-labelledby="search-title" hidden>
+                    <header>
+                        <p class="ui-eyebrow">FIND YOUR NEXT TRACK</p>
+                        <h1 class="ui-display-title" id="search-title">検索</h1>
+                    </header>
+                    <form class="ui-music-search" role="search">
+                        <label class="visually-hidden" for="music-search">曲、アーティスト、アルバムを検索</label>
+                        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" /><path d="m13 13 4 4" /></svg>
+                        <input id="music-search" type="search" placeholder="曲、アーティスト、アルバム" autocomplete="off" />
+                    </form>
+                    <section class="ui-music-section">
+                        <div class="ui-heading-row"><h2 class="ui-panel-title">曲</h2><span class="ui-helper-label" data-search-count></span></div>
+                        <div class="ui-music-track-list" data-search-results></div>
+                    </section>
+                </section>
+
+                <section class="ui-media-screen" id="media-library" data-media-screen="library" aria-labelledby="library-title" hidden>
+                    <header>
+                        <p class="ui-eyebrow">YOUR COLLECTION</p>
+                        <h1 class="ui-display-title" id="library-title">マイライブラリ</h1>
+                    </header>
+                    <div class="ui-inline-group" role="group" aria-label="曲を絞り込む">
+                        <button class="ui-filter-chip" type="button" data-library-filter="all" aria-pressed="true">すべて</button>
+                        <button class="ui-filter-chip" type="button" data-library-filter="ambient" aria-pressed="false">アンビエント</button>
+                        <button class="ui-filter-chip" type="button" data-library-filter="indie" aria-pressed="false">インディー</button>
+                    </div>
+                    <div class="ui-music-track-list" data-library-results></div>
+                </section>
+
+                <section class="ui-media-screen" id="media-queue" data-media-screen="queue" aria-labelledby="queue-title" hidden>
+                    <header>
+                        <p class="ui-eyebrow">UP NEXT</p>
+                        <h1 class="ui-display-title" id="queue-title">再生キュー</h1>
+                        <p class="ui-description">現在の曲のあとに再生する曲です。</p>
+                    </header>
+                    <section class="ui-music-section">
+                        <div class="ui-heading-row"><h2 class="ui-panel-title">次に再生</h2><span class="ui-count" data-queue-count>4</span></div>
+                        <div class="ui-music-track-list" data-queue-results></div>
+                    </section>
+                </section>
+
+                <section class="ui-media-screen ui-now-playing" id="media-now-playing" data-media-screen="now-playing" aria-labelledby="now-playing-title" hidden>
+                    <button class="ui-button-quiet ui-now-playing-back" type="button" data-media-view="home">戻る</button>
+                    <div class="ui-now-playing-layout">
+                        <span class="ui-album-art ui-album-art--violet ui-now-playing-art" data-now-art aria-hidden="true"></span>
+                        <div class="ui-now-playing-copy">
+                            <p class="ui-eyebrow">NOW PLAYING</p>
+                            <h1 class="ui-display-title" id="now-playing-title" data-current-title>Night Drive</h1>
+                            <p class="ui-description" data-current-artist>Mira Sol · After Hours</p>
+                            <div class="ui-player-timeline">
+                                <time data-current-time>0:00</time>
+                                <input type="range" min="0" max="212" value="0" step="1" data-seek aria-label="再生位置" />
+                                <time data-track-duration>3:32</time>
+                            </div>
+                            <div class="ui-player-controls ui-now-playing-controls" role="group" aria-label="再生操作">
+                                <button class="ui-icon-button" type="button" data-player-action="previous" aria-label="前の曲"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 5 9 12l10 7z" /></svg></button>
+                                <button class="ui-player-toggle" type="button" data-player-action="toggle" aria-label="再生" aria-pressed="false">
+                                    <span data-play-icon><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 12 7-12 7z" /></svg></span>
+                                    <span data-pause-icon hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM15 5h3v14h-3z" /></svg></span>
+                                </button>
+                                <button class="ui-icon-button" type="button" data-player-action="next" aria-label="次の曲"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7z" /></svg></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="ui-music-player" aria-label="音楽プレーヤー">
+            <button class="ui-player-track" type="button" data-open-player aria-label="再生中の曲を開く">
+                <span class="ui-album-art ui-album-art--violet ui-player-cover" data-current-art aria-hidden="true"></span>
+                <span class="ui-player-track-copy"><strong data-current-title>Night Drive</strong><span data-current-artist>Mira Sol · After Hours</span></span>
+            </button>
+            <div class="ui-player-main">
+                <div class="ui-player-controls" role="group" aria-label="再生操作">
+                    <button class="ui-icon-button" type="button" data-player-action="previous" aria-label="前の曲"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 5 9 12l10 7z" /></svg></button>
+                    <button class="ui-player-toggle" type="button" data-player-action="toggle" aria-label="再生" aria-pressed="false">
+                        <span data-play-icon><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 12 7-12 7z" /></svg></span>
+                        <span data-pause-icon hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM15 5h3v14h-3z" /></svg></span>
+                    </button>
+                    <button class="ui-icon-button" type="button" data-player-action="next" aria-label="次の曲"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7z" /></svg></button>
+                </div>
+                <div class="ui-player-timeline">
+                    <time data-current-time>0:00</time>
+                    <input type="range" min="0" max="212" value="0" step="1" data-seek aria-label="再生位置" />
+                    <time data-track-duration>3:32</time>
+                </div>
+            </div>
+            <div class="ui-player-tools">
+                <button class="ui-button-quiet" type="button" data-open-queue>再生キュー <span class="ui-count" data-queue-count>4</span></button>
+                <label class="ui-volume-control">音量<input type="range" min="0" max="100" value="68" data-volume /></label>
+            </div>
+        </footer>
+
+        <nav class="ui-mobile-nav" aria-label="音楽アプリ">
+            <a href="#media-home" data-media-view="home" aria-current="page"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/layout-dashboard.svg')" aria-hidden="true"></span><span>ホーム</span></a>
+            <a href="#media-search" data-media-view="search"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/search.svg')" aria-hidden="true"></span><span>検索</span></a>
+            <a href="#media-library" data-media-view="library"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/library.svg')" aria-hidden="true"></span><span>ライブラリ</span></a>
+        </nav>
+    </div>
+    <script src="media.js" defer></script>
+</body>
+
+</html>

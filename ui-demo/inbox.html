@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#121212" />
+    <title>受信トレイ | Liner UI Demo</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../layout.css" />
+    <link rel="stylesheet" href="../ui.css" />
+</head>
+
+<body>
+    <div class="ui-app-shell">
+        <aside class="ui-sidebar h-screen" aria-label="受信トレイサイドバー">
+            <a class="ui-brand" href="dashboard.html">
+                <span class="ui-brand-mark" aria-hidden="true">L</span>
+                <span class="ui-brand-name">LINER<small class="ui-brand-caption">WORKSPACE</small></span>
+            </a>
+
+            <div class="ui-workspace-switcher min-w-0">
+                <span class="ui-avatar ui-avatar--square ui-avatar-blue" aria-hidden="true">B</span>
+                <span class="ui-truncate">Bluebird Studio</span>
+                <svg class="ui-workspace-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+            </div>
+
+            <nav class="ui-sidebar-nav" aria-label="メインナビゲーション">
+                <span class="ui-nav-caption">ワークスペース</span>
+                <a class="ui-nav-link" href="dashboard.html"><svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="2.5" width="6" height="6" /><rect x="11.5" y="2.5" width="6" height="6" /><rect x="2.5" y="11.5" width="6" height="6" /><rect x="11.5" y="11.5" width="6" height="6" /></svg><span>概要</span></a>
+                <a class="ui-nav-link" href="projects.html"><svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="5" height="5" /><rect x="12" y="3" width="5" height="5" /><rect x="3" y="12" width="5" height="5" /><rect x="12" y="12" width="5" height="5" /></svg><span>プロジェクト</span></a>
+                <a class="ui-nav-link" href="inbox.html" aria-current="page"><svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" /><path d="m3 5 7 5.5L17 5" /></svg><span>受信トレイ</span><span class="ui-count">3</span></a>
+                <span class="ui-nav-caption">管理</span>
+                <a class="ui-nav-link" href="settings.html"><svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3" /><path d="M10 1.8v2M10 16.2v2M18.2 10h-2M3.8 10h-2m14-5.8-1.4 1.4m-8.8 8.8-1.4 1.4m12 0-1.4-1.4M5.2 5.2 3.8 3.8" /></svg><span>設定</span></a>
+            </nav>
+
+            <div class="ui-status-summary"><span class="ui-status-dot" aria-hidden="true"></span><span>すべてのシステムが正常です</span></div>
+            <a class="ui-profile-menu" href="settings.html#profile"><span class="ui-avatar ui-avatar-purple" aria-hidden="true">花</span><span class="ui-profile-details">山田 花子<small>オーナー</small></span><span aria-hidden="true">•••</span></a>
+        </aside>
+
+        <main class="ui-app-main min-w-0">
+            <header class="ui-topbar">
+                <div class="ui-context-line"><span>Bluebird Studio</span><span aria-hidden="true">/</span><strong>受信トレイ</strong></div>
+                <div class="ui-action-group">
+                    <form class="ui-search-field" role="search">
+                        <label class="visually-hidden" for="inbox-search">メッセージを検索</label>
+                        <svg class="ui-search-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" /><path d="m13 13 4 4" /></svg>
+                        <input class="ui-search-input" id="inbox-search" type="search" placeholder="検索" />
+                    </form>
+                    <button class="ui-icon-button ui-icon-button--large" type="button" aria-label="通知"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 7.5a5.5 5.5 0 0 0-11 0c0 6-2 6-2 7.5h15c0-1.5-2-1.5-2-7.5ZM8 17h4" /></svg><span class="ui-notification-dot" aria-hidden="true"></span></button>
+                    <a class="ui-avatar ui-avatar-purple" href="settings.html#profile" aria-label="山田 花子のプロフィール">花</a>
+                </div>
+            </header>
+
+            <div class="ui-content-stack--wide">
+                <section class="ui-heading-row ui-heading-row--end" aria-labelledby="page-title">
+                    <div>
+                        <p class="ui-eyebrow">TEAM / COMMUNICATION</p>
+                        <h1 class="ui-display-title" id="page-title">受信トレイ</h1>
+                        <p class="ui-description">チームからの連絡とプロジェクトの更新を確認できます。</p>
+                    </div>
+                    <button class="ui-button-primary ui-button--large" type="button">新しいメッセージ</button>
+                </section>
+
+                <div class="ui-toast" role="status"><span class="ui-status-dot" aria-hidden="true"></span><span>未読メッセージが3件あります。</span><a class="ui-more-link" href="#message-list">未読を見る</a></div>
+
+                <section class="grid-12 gap-1 m-0 y-start" aria-label="メッセージ">
+                    <article class="ui-panel min-w-0 col-span-4 tablet-col-span-3 mobile-col-span-full" id="message-list">
+                        <div class="ui-heading-row">
+                            <h2 class="ui-panel-title">メッセージ</h2>
+                            <button class="ui-icon-button ui-icon-button--small" type="button" aria-label="メッセージの操作">•••</button>
+                        </div>
+                        <nav class="ui-tabs" aria-label="メッセージの分類">
+                            <a class="ui-tab" href="#message-list" aria-current="page">すべて <span class="ui-count">8</span></a>
+                            <a class="ui-tab" href="#message-list">未読 <span class="ui-count">3</span></a>
+                        </nav>
+                        <nav class="layout-stack gap-half m-0" aria-label="メッセージ一覧">
+                            <a class="ui-nav-link" href="#selected-message" aria-current="page">
+                                <span class="ui-avatar ui-avatar--small ui-avatar-green" aria-hidden="true">美</span>
+                                <span class="ui-profile-details ui-truncate">佐藤 美咲<small>新しいデザイン案を確認してください</small></span>
+                                <time datetime="2026-10-17T10:42">10:42</time>
+                            </a>
+                            <a class="ui-nav-link" href="#selected-message">
+                                <span class="ui-avatar ui-avatar--small ui-avatar-blue" aria-hidden="true">健</span>
+                                <span class="ui-profile-details ui-truncate">高橋 健太<small>週次レビューの日程について</small></span>
+                                <time datetime="2026-10-17T09:18">09:18</time>
+                            </a>
+                            <a class="ui-nav-link" href="#selected-message">
+                                <span class="ui-avatar ui-avatar--small ui-avatar-purple" aria-hidden="true">葵</span>
+                                <span class="ui-profile-details ui-truncate">鈴木 葵<small>見積もりを更新しました</small></span>
+                                <time datetime="2026-10-16T16:31">昨日</time>
+                            </a>
+                            <a class="ui-nav-link" href="#selected-message">
+                                <span class="ui-avatar ui-avatar--small ui-avatar-blue" aria-hidden="true">亮</span>
+                                <span class="ui-profile-details ui-truncate">伊藤 亮<small>公開前チェックのお願い</small></span>
+                                <time datetime="2026-10-16T14:05">昨日</time>
+                            </a>
+                        </nav>
+                        <nav class="ui-pagination" aria-label="メッセージ一覧のページ"><span>8件のメッセージ</span><a class="ui-more-link" href="#message-list">すべて表示</a></nav>
+                    </article>
+
+                    <article class="ui-panel ui-panel--spacious min-w-0 col-span-8 tablet-col-span-5 mobile-col-span-full" id="selected-message">
+                        <div class="ui-heading-row">
+                            <div>
+                                <p class="ui-eyebrow">ECサイトのリニューアル</p>
+                                <h2 class="ui-panel-title">新しいデザイン案を確認してください</h2>
+                            </div>
+                            <div class="ui-action-group">
+                                <span class="ui-badge ui-state--info">未読</span>
+                                <button class="ui-icon-button ui-icon-button--small" type="button" aria-label="メッセージのその他の操作">•••</button>
+                            </div>
+                        </div>
+
+                        <div class="ui-separated-row">
+                            <div class="ui-avatar-group">
+                                <span class="ui-avatar ui-avatar--small ui-avatar-green" aria-hidden="true">美</span>
+                                <span class="ui-profile-details">佐藤 美咲<small>プロダクトデザイナー</small></span>
+                            </div>
+                            <time datetime="2026-10-17T10:42">2026年10月17日 10:42</time>
+                        </div>
+
+                        <div class="layout-stack gap-1 m-0">
+                            <p>ホーム画面の新しいデザイン案を共有します。ナビゲーションを整理して、主要な購入操作をページの上部にまとめました。</p>
+                            <p>商品一覧と詳細画面のレビューをお願いします。フィードバックを反映して、金曜日までに最終版をまとめます。</p>
+                            <blockquote class="quote-note"><p>デザインファイルは「ECサイトのリニューアル」プロジェクトに追加しました。</p></blockquote>
+                        </div>
+
+                        <div class="ui-separated-row"><strong>スレッド</strong><span class="ui-helper-label">2件の返信</span></div>
+                        <ol class="ui-timeline">
+                            <li class="ui-timeline-item"><span class="ui-state--success" aria-hidden="true"></span><div><strong>高橋 健太 <time datetime="2026-10-17T10:58">10:58</time></strong><p>確認しました。購入ボタンの位置がわかりやすくなっています。</p></div></li>
+                            <li class="ui-timeline-item"><span class="ui-state--info" aria-hidden="true"></span><div><strong>山田 花子 <time datetime="2026-10-17T11:06">11:06</time></strong><p>商品詳細のモバイル表示も一緒にレビューします。</p></div></li>
+                        </ol>
+
+                        <form class="layout-stack gap-1 m-0">
+                            <fieldset class="m-0">
+                                <legend>返信</legend>
+                                <p class="m-0"><label for="reply-message">メッセージ</label><textarea id="reply-message" rows="3" placeholder="メッセージを入力"></textarea></p>
+                            </fieldset>
+                            <div class="ui-action-group x-end">
+                                <button class="ui-button-secondary" type="button">下書き</button>
+                                <button class="ui-button-primary" type="submit">返信を送信</button>
+                            </div>
+                        </form>
+                    </article>
+                </section>
+
+                <footer class="ui-footer-row"><span>受信トレイは最新の状態です</span><span>データはデモ用です</span></footer>
+            </div>
+        </main>
+
+        <nav class="ui-mobile-nav" aria-label="ワークスペース">
+            <a href="dashboard.html#overview"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/layout-dashboard.svg')" aria-hidden="true"></span><span>概要</span></a>
+            <a href="projects.html#page-title"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/folder.svg')" aria-hidden="true"></span><span>プロジェクト</span></a>
+            <a href="inbox.html#page-title" aria-current="page"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/message-2.svg')" aria-hidden="true"></span><span>受信トレイ</span></a>
+            <a href="settings.html#page-title"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/settings.svg')" aria-hidden="true"></span><span>設定</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

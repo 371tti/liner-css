@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liner CSS - Element Showcase</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Liner CSS</h1>
+        <p>HTML Element Showcase</p>
+
+        <nav>
+            <a href="#text">Text</a>
+            <a href="#list">List</a>
+            <a href="#table">Table</a>
+            <a href="#form">Form</a>
+            <a href="#interactive">Interactive</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="heading">
+            <h2>Headings</h2>
+
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+
+            <hgroup>
+                <h3>Grouped heading</h3>
+                <p>Subtitle of the heading</p>
+            </hgroup>
+        </section>
+
+        <section id="text">
+            <h2>Text</h2>
+
+            <p>通常の段落テキストです。</p>
+            <p>
+                <strong>Strong</strong>
+                <b>Bold</b>
+                <em>Emphasis</em>
+                <i>Italic</i>
+                <u>Underline</u>
+                <s>Strikethrough</s>
+                <small>Small</small>
+                <mark>Highlighted</mark>
+            </p>
+
+            <p>
+                <a href="#text">Hyperlink</a>
+                <abbr title="HyperText Markup Language">HTML</abbr>
+                <dfn title="Cascading Style Sheets">CSS</dfn>
+                <cite>Book Title</cite>
+            </p>
+
+            <p>
+                <code>let x = 42;</code>
+                <kbd>Ctrl</kbd> + <kbd>C</kbd>
+                <samp>Hello, World!</samp>
+                <var>x</var>
+            </p>
+
+            <p>
+                H<sub>2</sub>O
+                x<sup>2</sup>
+                <time datetime="2026-10-16">2026/10/16</time>
+                <data value="123">Item 123</data>
+            </p>
+
+            <p>
+                <q>Inline quotation</q>
+                <span>Generic span</span>
+                <bdi>مرحبا</bdi>
+                <bdo dir="rtl">Reversed text</bdo>
+            </p>
+
+            <p>
+                <ruby>漢字<rp>(</rp><rt>かんじ</rt><rp>)</rp></ruby>
+                <br />
+                Line break
+                <wbr />
+            </p>
+
+            <p>
+                <ins>Inserted text</ins>
+                <del>Deleted text</del>
+            </p>
+
+            <hr />
+
+            <blockquote cite="https://example.com">
+                This is a block quotation.
+            </blockquote>
+
+            <h3>Quote Variants</h3>
+            <blockquote class="quote-note">
+                補足情報や参考になる内容を表示します。
+            </blockquote>
+            <blockquote class="quote-tip">
+                操作のヒントやおすすめの方法を表示します。
+            </blockquote>
+            <blockquote class="quote-warning">
+                注意が必要な内容を表示します。
+            </blockquote>
+            <blockquote class="quote-important">
+                特に重要な内容を表示します。
+            </blockquote>
+            <blockquote class="quote-caution">
+                慎重な対応が必要な内容を表示します。
+            </blockquote>
+
+            <pre>Preformatted
+    text preserves
+        whitespace.</pre>
+
+            <address>
+                Example Author<br />
+                example@example.com
+            </address>
+        </section>
+
+        <section id="list">
+            <h2>Lists</h2>
+
+            <h3>Unordered List</h3>
+            <ul>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item
+                    <ul>
+                        <li>Nested item</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Ordered List</h3>
+            <ol>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ol>
+
+            <h3>Description List</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>Markup language</dd>
+                <dt>CSS</dt>
+                <dd>Style sheet language</dd>
+                <dt>rust-lang</dt>
+                <dt>rs</dt>
+                <dd>Programming language</dd>
+            </dl>
+
+            <h3>Menu</h3>
+            <menu>
+                <li>Menu item A</li>
+                <li>Menu item B</li>
+            </menu>
+        </section>
+
+        <section id="table">
+            <h2>Tables</h2>
+
+            <table>
+                <caption>Sample Table</caption>
+                <colgroup>
+                    <col />
+                    <col span="2" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Alpha</th>
+                        <td>String</td>
+                        <td>Hello</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Beta</th>
+                        <td>Number</td>
+                        <td>123</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row">Total</th>
+                        <td colspan="2">2 items</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="form">
+            <h2>Forms</h2>
+
+            <form action="#" method="get">
+                <fieldset>
+                    <legend>Text Inputs</legend>
+
+                    <p>
+                        <label for="text-input">Text</label>
+                        <input id="text-input" type="text"
+                               placeholder="Text input" />
+                    </p>
+
+                    <p>
+                        <label for="password-input">Password</label>
+                        <input id="password-input" type="password" />
+                    </p>
+
+                    <p>
+                        <label for="email-input">Email</label>
+                        <input id="email-input" type="email"
+                               placeholder="user@example.com" />
+                    </p>
+
+                    <p>
+                        <label for="url-input">URL</label>
+                        <input id="url-input" type="url"
+                               placeholder="https://example.com" />
+                    </p>
+
+                    <p>
+                        <label for="search-input">Search</label>
+                        <input id="search-input" type="search" />
+                    </p>
+
+                    <p>
+                        <label for="tel-input">Telephone</label>
+                        <input id="tel-input" type="tel" />
+                    </p>
+
+                    <p>
+                        <label for="number-input">Number</label>
+                        <input id="number-input" type="number"
+                               value="42" />
+                    </p>
+
+                    <p>
+                        <label for="disabled-input">Disabled</label>
+                        <input id="disabled-input" type="text"
+                               value="Disabled" disabled />
+                    </p>
+
+                    <p>
+                        <label for="readonly-input">Readonly</label>
+                        <input id="readonly-input" type="text"
+                               value="Readonly" readonly />
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Selection</legend>
+
+                    <p>
+                        <label>
+                            <input type="checkbox" checked />
+                            Checkbox checked
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            Checkbox unchecked
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            <input type="radio" name="radio" checked />
+                            Radio A
+                        </label>
+                        <label>
+                            <input type="radio" name="radio" />
+                            Radio B
+                        </label>
+                    </p>
+
+                    <p>
+                        <label for="select-input">Select</label>
+                        <select id="select-input">
+                            <optgroup label="Group A">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                            </optgroup>
+                            <optgroup label="Group B">
+                                <option>Option 3</option>
+                            </optgroup>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="multi-select">Multiple Select</label>
+                        <select id="multi-select" multiple size="4">
+                            <option selected>Alpha</option>
+                            <option>Beta</option>
+                            <option selected>Gamma</option>
+                            <option>Delta</option>
+                            <option>Epsilon</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="datalist-input">Datalist</label>
+                        <input id="datalist-input" list="suggestions" />
+                        <datalist id="suggestions">
+                            <option value="Rust"></option>
+                            <option value="JavaScript"></option>
+                            <option value="Python"></option>
+                        </datalist>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Date and Other Inputs</legend>
+
+                    <p><input type="date" aria-label="Date" /></p>
+                    <p><input type="datetime-local" aria-label="Date and time" /></p>
+                    <p><input type="time" aria-label="Time" /></p>
+                    <p><input type="month" aria-label="Month" /></p>
+                    <p><input type="week" aria-label="Week" /></p>
+                    <p><input type="color" aria-label="Color" /></p>
+                    <p><input type="range" aria-label="Range" /></p>
+                    <p><input type="file" aria-label="File" /></p>
+
+                    <p>
+                        <label for="textarea">Textarea</label>
+                        <textarea id="textarea" rows="4"
+                                  placeholder="Write something..."></textarea>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Buttons</legend>
+
+                    <button type="button">Button</button>
+                    <button type="button" disabled>Disabled</button>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                    <input type="button" value="Input Button" />
+                    <input type="submit" value="Input Submit" />
+                    <input type="reset" value="Input Reset" />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Indicators</legend>
+
+                    <p>
+                        <label for="progress">Progress</label>
+                        <progress id="progress" value="65" max="100">
+                            65%
+                        </progress>
+                    </p>
+
+                    <p>
+                        <label for="meter">Meter</label>
+                        <meter id="meter" min="0" max="100"
+                               value="70" low="25" high="80"
+                               optimum="90">70%</meter>
+                    </p>
+
+                    <p>
+                        Output: <output>42</output>
+                    </p>
+                </fieldset>
+            </form>
+        </section>
+
+        <section id="interactive">
+            <h2>Interactive Elements</h2>
+
+            <details>
+                <summary>Details Summary</summary>
+                <p>Hidden content revealed on click.</p>
+            </details>
+
+            <details open>
+                <summary>Opened Details</summary>
+                <p>This content is initially visible.</p>
+            </details>
+
+            <dialog open>
+                Dialog content
+                <button type="button">Action</button>
+            </dialog>
+        </section>
+
+        <section id="media">
+            <h2>Media</h2>
+
+            <figure>
+                <img
+                    src="https://placehold.co/320x180"
+                    alt="Placeholder image"
+                    width="320"
+                    height="180"
+                />
+                <figcaption>Figure caption</figcaption>
+            </figure>
+
+            <picture>
+                <source
+                    media="(min-width: 800px)"
+                    srcset="https://placehold.co/480x240"
+                />
+                <img
+                    src="https://placehold.co/240x120"
+                    alt="Responsive picture"
+                />
+            </picture>
+
+            <p>
+                <audio controls></audio>
+            </p>
+
+            <p>
+                <video controls width="320" height="180"></video>
+            </p>
+
+            <canvas width="320" height="120">
+                Canvas fallback text
+            </canvas>
+
+            <svg width="120" height="120" viewBox="0 0 120 120"
+                 xmlns="http://www.w3.org/2000/svg"
+                 role="img" aria-label="Sample circle">
+                <circle cx="60" cy="60" r="45"
+                        fill="none" stroke="currentColor"
+                        stroke-width="4" />
+            </svg>
+
+            <iframe
+                title="Embedded example"
+                srcdoc="<p>Iframe content</p>"
+                width="320"
+                height="120">
+            </iframe>
+        </section>
+
+        <section id="semantic">
+            <h2>Semantic Layout</h2>
+
+            <article>
+                <header>
+                    <h3>Article Title</h3>
+                    <p>Article metadata</p>
+                </header>
+
+                <p>Article content</p>
+
+                <aside>
+                    <p>Related information</p>
+                </aside>
+
+                <footer>
+                    Article footer
+                </footer>
+            </article>
+
+            <search>
+                <form action="#" method="get">
+                    <label for="semantic-search">Search</label>
+                    <input id="semantic-search" type="search" />
+                    <button type="submit">Search</button>
+                </form>
+            </search>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Liner CSS</p>
+    </footer>
+</body>
+
+</html>

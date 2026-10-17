@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#121212" />
+    <title>プロジェクト | Liner UI Demo</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../layout.css" />
+    <link rel="stylesheet" href="../ui.css" />
+</head>
+
+<body>
+    <div class="ui-app-shell">
+        <aside class="ui-sidebar h-screen" aria-label="プロジェクトサイドバー">
+            <a class="ui-brand" href="dashboard.html">
+                <span class="ui-brand-mark" aria-hidden="true">L</span>
+                <span class="ui-brand-name">LINER<small class="ui-brand-caption">WORKSPACE</small></span>
+            </a>
+
+            <div class="ui-workspace-switcher min-w-0">
+                <span class="ui-avatar ui-avatar--square ui-avatar-blue" aria-hidden="true">B</span>
+                <span class="ui-truncate">Bluebird Studio</span>
+                <svg class="ui-workspace-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+            </div>
+
+            <nav class="ui-sidebar-nav" aria-label="メインナビゲーション">
+                <span class="ui-nav-caption">ワークスペース</span>
+                <a class="ui-nav-link" href="dashboard.html">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="2.5" width="6" height="6" /><rect x="11.5" y="2.5" width="6" height="6" /><rect x="2.5" y="11.5" width="6" height="6" /><rect x="11.5" y="11.5" width="6" height="6" /></svg>
+                    <span>概要</span>
+                </a>
+                <a class="ui-nav-link" href="projects.html" aria-current="page">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="5" height="5" /><rect x="12" y="3" width="5" height="5" /><rect x="3" y="12" width="5" height="5" /><rect x="12" y="12" width="5" height="5" /></svg>
+                    <span>プロジェクト</span>
+                </a>
+                <a class="ui-nav-link" href="inbox.html">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" /><path d="m3 5 7 5.5L17 5" /></svg>
+                    <span>受信トレイ</span>
+                </a>
+                <span class="ui-nav-caption">管理</span>
+                <a class="ui-nav-link" href="settings.html">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3" /><path d="M10 1.8v2M10 16.2v2M18.2 10h-2M3.8 10h-2m14-5.8-1.4 1.4m-8.8 8.8-1.4 1.4m12 0-1.4-1.4M5.2 5.2 3.8 3.8" /></svg>
+                    <span>設定</span>
+                </a>
+            </nav>
+
+            <div class="ui-status-summary">
+                <span class="ui-status-dot" aria-hidden="true"></span>
+                <span>すべてのシステムが正常です</span>
+            </div>
+
+            <a class="ui-profile-menu" href="settings.html#profile">
+                <span class="ui-avatar ui-avatar-purple" aria-hidden="true">花</span>
+                <span class="ui-profile-details">山田 花子<small>オーナー</small></span>
+                <span aria-hidden="true">•••</span>
+            </a>
+        </aside>
+
+        <main class="ui-app-main min-w-0">
+            <header class="ui-topbar">
+                <div class="ui-context-line"><span>Bluebird Studio</span><span aria-hidden="true">/</span><strong>プロジェクト</strong></div>
+                <div class="ui-action-group">
+                    <form class="ui-search-field" role="search">
+                        <label class="visually-hidden" for="projects-search">プロジェクトを検索</label>
+                        <svg class="ui-search-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" /><path d="m13 13 4 4" /></svg>
+                        <input class="ui-search-input" id="projects-search" type="search" placeholder="検索" />
+                    </form>
+                    <button class="ui-icon-button ui-icon-button--large" type="button" aria-label="通知"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 7.5a5.5 5.5 0 0 0-11 0c0 6-2 6-2 7.5h15c0-1.5-2-1.5-2-7.5ZM8 17h4" /></svg><span class="ui-notification-dot" aria-hidden="true"></span></button>
+                    <a class="ui-avatar ui-avatar-purple" href="settings.html#profile" aria-label="山田 花子のプロフィール">花</a>
+                </div>
+            </header>
+
+            <div class="ui-content-stack--wide">
+                <section class="ui-heading-row ui-heading-row--end" aria-labelledby="page-title">
+                    <div>
+                        <p class="ui-eyebrow">WORKSPACE / PROJECTS</p>
+                        <h1 class="ui-display-title" id="page-title">プロジェクト</h1>
+                        <p class="ui-description">チームの進行状況、担当者、期限をまとめて確認できます。</p>
+                    </div>
+                    <div class="ui-action-group">
+                        <button class="ui-dropdown-trigger" type="button">今四半期</button>
+                        <button class="ui-button-primary ui-button--large" type="button">プロジェクトを作成</button>
+                    </div>
+                </section>
+
+                <section class="grid-4 tablet-grid-2 mobile-grid-2 gap-1 m-0" aria-label="プロジェクトの概要">
+                    <article class="ui-stat-card min-w-0"><div><span>進行中</span><span>全プロジェクト</span></div><strong>12</strong><div><span class="ui-trend ui-state--success">予定どおり 8件</span></div></article>
+                    <article class="ui-stat-card min-w-0"><div><span>期限が近い</span><span>7日以内</span></div><strong>3</strong><div><span>担当チームに通知済み</span></div></article>
+                    <article class="ui-stat-card min-w-0"><div><span>完了率</span><span>今四半期</span></div><strong>68%</strong><div><span class="ui-trend ui-state--success">前四半期比 +9%</span></div></article>
+                    <article class="ui-stat-card min-w-0"><div><span>要確認</span><span>リスクあり</span></div><strong>2</strong><div><span class="ui-trend ui-state--warning">期限を確認</span></div></article>
+                </section>
+
+                <div class="ui-alert ui-state--info" role="status">
+                    <span class="ui-alert-mark" aria-hidden="true"></span>
+                    <div><strong>週次レビューの準備ができました</strong><p>更新が必要なプロジェクトが2件あります。担当者と期限を確認してください。</p></div>
+                </div>
+
+                <article class="ui-panel ui-panel--spacious min-w-0">
+                    <div class="ui-heading-row">
+                        <div>
+                            <p class="ui-eyebrow">PORTFOLIO</p>
+                            <h2 class="ui-panel-title">すべてのプロジェクト</h2>
+                        </div>
+                        <a class="ui-more-link" href="#projects-table">一覧をエクスポート</a>
+                    </div>
+
+                    <form class="ui-filter-bar" role="search">
+                        <label>プロジェクト名<input type="search" placeholder="名前で検索" /></label>
+                        <label>状態<select><option>すべての状態</option><option>進行中</option><option>計画中</option><option>完了</option></select></label>
+                        <label>担当チーム<select><option>すべてのチーム</option><option>デザイン</option><option>プロダクト</option><option>マーケティング</option></select></label>
+                        <button class="ui-button-secondary" type="submit">絞り込む</button>
+                    </form>
+
+                    <div class="ui-scroll-x" id="projects-table">
+                        <table class="ui-data-table ui-data-table--compact ui-data-table--selectable">
+                            <thead>
+                                <tr>
+                                    <th scope="col"><span class="visually-hidden">選択</span></th>
+                                    <th scope="col">プロジェクト</th>
+                                    <th scope="col">チーム</th>
+                                    <th scope="col">状態</th>
+                                    <th scope="col">進捗</th>
+                                    <th scope="col">期限</th>
+                                    <th scope="col"><span class="visually-hidden">操作</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="ECサイトのリニューアルを選択" /></td>
+                                    <th scope="row">ECサイトのリニューアル</th>
+                                    <td><div class="ui-avatar-group" aria-label="担当者 佐藤、鈴木、高橋"><span class="ui-avatar ui-avatar--small ui-avatar-blue" aria-hidden="true">佐</span><span class="ui-avatar ui-avatar--small ui-avatar-green" aria-hidden="true">鈴</span><span class="ui-avatar ui-avatar--small ui-avatar-purple" aria-hidden="true">高</span></div></td>
+                                    <td><span class="ui-badge ui-state--success">進行中</span></td>
+                                    <td><div class="layout-stack gap-half m-0"><div class="ui-value-row"><span>72%</span><strong>完了</strong></div><progress class="ui-progress-bar ui-state--success" value="72" max="100" aria-label="ECサイトのリニューアル 72%">72%</progress></div></td>
+                                    <td><time datetime="2026-11-06">11月6日</time></td>
+                                    <td><button class="ui-icon-button ui-icon-button--small" type="button" aria-label="ECサイトのリニューアルの操作">•••</button></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="ブランドガイドラインを選択" /></td>
+                                    <th scope="row">ブランドガイドライン</th>
+                                    <td><div class="ui-avatar-group" aria-label="担当者 田中、山田"><span class="ui-avatar ui-avatar--small ui-avatar-green" aria-hidden="true">田</span><span class="ui-avatar ui-avatar--small ui-avatar-purple" aria-hidden="true">山</span></div></td>
+                                    <td><span class="ui-badge ui-state--warning">要確認</span></td>
+                                    <td><div class="layout-stack gap-half m-0"><div class="ui-value-row"><span>48%</span><strong>完了</strong></div><progress class="ui-progress-bar ui-state--warning" value="48" max="100" aria-label="ブランドガイドライン 48%">48%</progress></div></td>
+                                    <td><time datetime="2026-10-22">10月22日</time></td>
+                                    <td><button class="ui-icon-button ui-icon-button--small" type="button" aria-label="ブランドガイドラインの操作">•••</button></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="モバイルアプリの分析を選択" /></td>
+                                    <th scope="row">モバイルアプリの分析</th>
+                                    <td><div class="ui-avatar-group" aria-label="担当者 伊藤、佐藤"><span class="ui-avatar ui-avatar--small ui-avatar-blue" aria-hidden="true">伊</span><span class="ui-avatar ui-avatar--small ui-avatar-green" aria-hidden="true">佐</span></div></td>
+                                    <td><span class="ui-badge ui-state--info">計画中</span></td>
+                                    <td><div class="layout-stack gap-half m-0"><div class="ui-value-row"><span>18%</span><strong>完了</strong></div><progress class="ui-progress-bar ui-state--info" value="18" max="100" aria-label="モバイルアプリの分析 18%">18%</progress></div></td>
+                                    <td><time datetime="2026-12-14">12月14日</time></td>
+                                    <td><button class="ui-icon-button ui-icon-button--small" type="button" aria-label="モバイルアプリの分析の操作">•••</button></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="オンボーディング改善を選択" /></td>
+                                    <th scope="row">オンボーディング改善</th>
+                                    <td><div class="ui-avatar-group" aria-label="担当者 高橋、田中"><span class="ui-avatar ui-avatar--small ui-avatar-purple" aria-hidden="true">高</span><span class="ui-avatar ui-avatar--small ui-avatar-blue" aria-hidden="true">田</span></div></td>
+                                    <td><span class="ui-badge ui-state--success">進行中</span></td>
+                                    <td><div class="layout-stack gap-half m-0"><div class="ui-value-row"><span>86%</span><strong>完了</strong></div><progress class="ui-progress-bar ui-state--success" value="86" max="100" aria-label="オンボーディング改善 86%">86%</progress></div></td>
+                                    <td><time datetime="2026-10-30">10月30日</time></td>
+                                    <td><button class="ui-icon-button ui-icon-button--small" type="button" aria-label="オンボーディング改善の操作">•••</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <nav class="ui-pagination" aria-label="プロジェクト一覧のページ">
+                        <span>12件中 1〜4件を表示</span>
+                        <div>
+                            <a class="ui-pagination-link" href="#projects-table" aria-label="前のページ">‹</a>
+                            <a class="ui-pagination-link" href="#projects-table" aria-current="page">1</a>
+                            <a class="ui-pagination-link" href="#projects-table">2</a>
+                            <a class="ui-pagination-link" href="#projects-table">3</a>
+                            <a class="ui-pagination-link" href="#projects-table" aria-label="次のページ">›</a>
+                        </div>
+                    </nav>
+                </article>
+
+                <footer class="ui-footer-row"><span>最終更新: 5分前</span><span>データはデモ用です</span></footer>
+            </div>
+        </main>
+
+        <nav class="ui-mobile-nav" aria-label="ワークスペース">
+            <a href="dashboard.html#overview"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/layout-dashboard.svg')" aria-hidden="true"></span><span>概要</span></a>
+            <a href="projects.html#page-title" aria-current="page"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/folder.svg')" aria-hidden="true"></span><span>プロジェクト</span></a>
+            <a href="inbox.html#page-title"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/message-2.svg')" aria-hidden="true"></span><span>受信トレイ</span></a>
+            <a href="settings.html#page-title"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/settings.svg')" aria-hidden="true"></span><span>設定</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

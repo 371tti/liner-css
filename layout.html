@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liner CSS - Layout Utilities</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="layout.css" />
+    <link rel="stylesheet" href="ui.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Liner CSS</h1>
+        <p>Layout Utilities</p>
+
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/component.html">HTML Elements</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="grid">
+            <h2>Grid</h2>
+            <p>Grid classes create equal-width columns with a gap set by <code>--frame-padding</code>. By default, three and four columns become two at <code>48em</code>, then one column at <code>36em</code>. The 12-column grid uses 12, 8, and 4 tracks across the two responsive steps.</p>
+
+            <h3><code>.grid-2</code></h3>
+            <div class="grid-2">
+                <div class="card">Column 1</div>
+                <div class="card">Column 2</div>
+            </div>
+
+            <h3><code>.grid-3</code></h3>
+            <div class="grid-3">
+                <div class="card">Column 1</div>
+                <div class="card">Column 2</div>
+                <div class="card">Column 3</div>
+            </div>
+
+            <h3><code>.grid-4</code></h3>
+            <div class="grid-4">
+                <div class="card">Column 1</div>
+                <div class="card">Column 2</div>
+                <div class="card">Column 3</div>
+                <div class="card">Column 4</div>
+            </div>
+
+            <h3><code>.grid-auto</code></h3>
+            <p>Creates as many columns as fit, with each column at least <code>16em</code> wide when space allows.</p>
+            <div class="grid-auto">
+                <div class="card">Item 1</div>
+                <div class="card">Item 2</div>
+                <div class="card">Item 3</div>
+            </div>
+
+            <h3>Gap utilities</h3>
+            <p>Use <code>.gap-0</code>, <code>.gap-half</code>, <code>.gap-1</code>, or <code>.gap-2</code> on a grid or flex container.</p>
+            <div class="grid-3 gap-half">
+                <div class="card">Half gap</div>
+                <div class="card">Half gap</div>
+                <div class="card">Half gap</div>
+            </div>
+        </section>
+
+        <section id="flex">
+            <h2>Flex</h2>
+            <p>Use <code>.flex-row</code> or <code>.flex-column</code> to place items in a row or column. Rows wrap at both responsive steps. Add <code>.flex-wrap</code> to allow wrapping at any width.</p>
+
+            <div class="flex-row flex-wrap">
+                <div class="card">Row item 1</div>
+                <div class="card">Row item 2</div>
+                <div class="card">Row item 3</div>
+            </div>
+
+            <h3><code>.flex-column</code></h3>
+            <div class="flex-column">
+                <div class="card">Column item 1</div>
+                <div class="card">Column item 2</div>
+            </div>
+        </section>
+
+        <section id="complex-layouts">
+            <h2>Complex Layout Patterns</h2>
+            <p>Combine grid tracks, named areas, and flexible containers to arrange page regions. These classes control placement and spacing; the existing component styles provide the visual appearance. Layout containers have vertical margins controlled by <code>--layout-group-margin-block</code>, which scales down at both responsive steps.</p>
+
+            <h3>Twelve-column composition</h3>
+            <p>Use <code>.col-span-*</code> on direct children of <code>.grid-12</code>. At tablet and mobile widths, spans default to full width; add <code>.tablet-col-span-*</code> or <code>.mobile-col-span-*</code> to choose a smaller span on that step.</p>
+            <div class="grid-12">
+                <div class="card col-span-8 tablet-col-span-5 mobile-col-span-3">Main content</div>
+                <div class="card col-span-4 tablet-col-span-3 mobile-col-span-1">Summary</div>
+                <div class="card col-span-full">Full-width section</div>
+            </div>
+
+            <h3>Nested layout composition</h3>
+            <p>Layouts can contain other layouts. This example places a 12-column dashboard and a split heading inside a sidebar layout. Use <code>.m-0</code> on nested layout blocks when the parent gap should control their spacing.</p>
+            <div class="layout-sidebar-left">
+                <div class="card area-sidebar">
+                    <h4>Filters</h4>
+                    <div class="layout-stack m-0">
+                        <div class="card">Date range</div>
+                        <div class="card">Region</div>
+                        <div class="card">Category</div>
+                    </div>
+                </div>
+                <div class="area-main">
+                    <div class="layout-stack m-0">
+                        <div class="layout-split m-0">
+                            <div class="card">Dashboard overview</div>
+                            <div class="card">Updated today</div>
+                        </div>
+                        <div class="grid-12 m-0">
+                            <div class="card col-span-8 tablet-col-span-5 mobile-col-span-full">Primary chart</div>
+                            <div class="card col-span-4 tablet-col-span-3 mobile-col-span-full">Summary</div>
+                            <div class="card col-span-full">Recent activity</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Bento dashboard</h3>
+            <p>Vary column and row spans to create a dashboard with one featured panel and smaller metrics. The spans reset to full-width cards on mobile.</p>
+            <div class="grid-12">
+                <div class="card col-span-8 row-span-2 tablet-col-span-5 tablet-row-span-2 mobile-col-span-full">Overview</div>
+                <div class="card col-span-4 tablet-col-span-3 mobile-col-span-full">Active users</div>
+                <div class="card col-span-4 tablet-col-span-3 mobile-col-span-full">Open tasks</div>
+                <div class="card col-span-6 tablet-col-span-4 mobile-col-span-full">Recent activity</div>
+                <div class="card col-span-6 tablet-col-span-4 mobile-col-span-full">Upcoming work</div>
+            </div>
+
+            <h3>Editorial composition</h3>
+            <p>Constrain the whole composition, then nest a right sidebar, split feature area, and related-story grid. The nested blocks use <code>.m-0</code> so the parent controls their spacing.</p>
+            <div class="layout-container-wide">
+                <div class="layout-sidebar-right m-0">
+                    <div class="area-main">
+                        <div class="layout-stack m-0">
+                            <div class="layout-split m-0">
+                                <div class="card">Lead story</div>
+                                <div class="card">Feature image</div>
+                            </div>
+                            <div class="grid-2 m-0">
+                                <div class="card">Related story one</div>
+                                <div class="card">Related story two</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card area-sidebar">
+                        <div class="layout-stack m-0">
+                            <div>About the author</div>
+                            <div>In this article</div>
+                            <div>More topics</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Sidebar and content</h3>
+            <p>Assign <code>.area-sidebar</code> and <code>.area-main</code> to children of <code>.layout-sidebar-left</code> or <code>.layout-sidebar-right</code>. On mobile, the regions stack in reading order.</p>
+            <div class="layout-sidebar-left">
+                <div class="card area-sidebar">Sidebar</div>
+                <div class="card area-main">Main content</div>
+            </div>
+
+            <h3>Right sidebar</h3>
+            <div class="layout-sidebar-right">
+                <div class="card area-main">Main content</div>
+                <div class="card area-sidebar">Sidebar</div>
+            </div>
+
+            <h3>Two sidebars</h3>
+            <p><code>.layout-sidebar-both</code> places content between left and right regions on wide screens, then stacks those regions on mobile.</p>
+            <div class="layout-sidebar-both">
+                <div class="card area-left">Left sidebar</div>
+                <div class="card area-main">Main content</div>
+                <div class="card area-right">Right sidebar</div>
+            </div>
+
+            <h3>Holy grail page</h3>
+            <p><code>.layout-holy-grail</code> places a header and footer around navigation, main content, and an aside. Use the matching <code>.area-*</code> classes; the page regions rearrange at both responsive steps.</p>
+            <div class="layout-holy-grail">
+                <div class="card area-header">Header</div>
+                <div class="card area-nav">Navigation</div>
+                <div class="area-main">
+                    <div class="layout-stack m-0">
+                        <div class="layout-split m-0">
+                            <div class="card">Welcome</div>
+                            <div class="card">Status</div>
+                        </div>
+                        <div class="grid-3 m-0">
+                            <div class="card">Workspace</div>
+                            <div class="card">Reports</div>
+                            <div class="card">Settings</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card area-aside">Aside</div>
+                <div class="card area-footer">Footer</div>
+            </div>
+
+            <h3>Flexible groups</h3>
+            <p><code>.layout-stack</code> creates a vertical group, <code>.layout-cluster</code> wraps items and aligns them, and <code>.layout-switcher</code> wraps children as space runs out. <code>.layout-split</code> gives the first column twice the space of the second. Use <code>.layout-container</code> or <code>.layout-container-wide</code> to center content within the configured width.</p>
+            <div class="layout-switcher">
+                <div class="card">Flexible panel</div>
+                <div class="card">Flexible panel</div>
+                <div class="card">Flexible panel</div>
+            </div>
+
+            <h3>Containers and split columns</h3>
+            <p>Use a container to constrain and center a group. A split layout gives its first child twice the available column width.</p>
+            <div class="layout-container-wide">
+                <div class="layout-split">
+                    <div class="card">Primary column</div>
+                    <div class="card">Secondary column</div>
+                </div>
+            </div>
+
+            <h3>Stack and cluster</h3>
+            <div class="layout-stack">
+                <div class="card">Stack item</div>
+                <div class="layout-cluster">
+                    <div class="card">Cluster item</div>
+                    <div class="card">Cluster item</div>
+                    <div class="card">Cluster item</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="size">
+            <h2>Width and Height</h2>
+            <p>Use percentage utilities for proportional sizes. Percentage heights need a parent with an explicit height. <code>.max-w-content</code>, <code>.max-w-wide</code>, and the content containers use their width variables while reserving <code>--content-width-min-margin</code>. At mobile width, that margin uses <code>--content-width-min-margin-mobile</code>.</p>
+
+            <h3>Width</h3>
+            <div class="flex-column">
+                <div class="card w-100">.w-100</div>
+                <div class="card w-75">.w-75</div>
+                <div class="card w-50">.w-50</div>
+            </div>
+
+            <h3>Height</h3>
+            <div class="flex-row" style="height: 10em;">
+                <div class="card h-100">.h-100</div>
+                <div class="card h-50 y-center">.h-50</div>
+                <div class="card h-auto">.h-auto</div>
+            </div>
+            <p><code>.h-screen</code> and <code>.min-h-screen</code> use the viewport height.</p>
+        </section>
+
+        <section id="spacing">
+            <h2>Margin and Padding</h2>
+            <p>Spacing values use <code>--frame-padding</code>: <code>1</code> is one frame padding and <code>2</code> is twice that value. Margin, padding, and default grid/flex gaps scale down at both responsive steps.</p>
+
+            <div class="grid-2">
+                <div class="card p-2">.p-2</div>
+                <div class="card p-1">.p-1</div>
+            </div>
+
+            <p class="m-1">Use <code>.m-0</code>, <code>.m-1</code>, <code>.m-2</code>, <code>.m-auto</code>, <code>.mx-auto</code>, and <code>.my-auto</code> for margins.</p>
+            <p>Use <code>.px-1</code>, <code>.px-2</code>, <code>.py-1</code>, and <code>.py-2</code> for axis-specific padding.</p>
+        </section>
+
+        <section id="alignment">
+            <h2>Alignment</h2>
+            <p>Add an alignment class to a grid or flex-row container to align its direct children. Use <code>x-start</code>, <code>x-center</code>, <code>x-end</code>, <code>y-start</code>, <code>y-center</code>, <code>y-end</code>, or <code>xy-center</code>.</p>
+
+            <h3><code>.x-center</code></h3>
+            <div class="grid-3 x-center">
+                <div class="card">Centered on X</div>
+                <div class="card">Centered on X</div>
+                <div class="card">Centered on X</div>
+            </div>
+
+            <h3><code>.y-center</code></h3>
+            <div class="grid-3 y-center" style="min-height: 8em;">
+                <div class="card">Centered on Y</div>
+                <div class="card">Centered on Y</div>
+                <div class="card">Centered on Y</div>
+            </div>
+
+            <h3><code>.xy-center</code></h3>
+            <div class="grid-3 xy-center" style="min-height: 8em;">
+                <div class="card">Centered on X and Y</div>
+                <div class="card">Centered on X and Y</div>
+                <div class="card">Centered on X and Y</div>
+            </div>
+        </section>
+
+        <section id="responsive">
+            <h2>Responsive Utilities</h2>
+            <p>There are two responsive steps: <code>tablet-*</code> applies above <code>36em</code> through <code>48em</code>, and <code>mobile-*</code> applies at <code>36em</code> and below. Wider screens use the base class.</p>
+
+            <h3>Grid columns by breakpoint</h3>
+            <p>Combine the base grid with breakpoint classes to choose the columns at each width: <code>grid-4 tablet-grid-3 mobile-grid-2</code>.</p>
+            <div class="grid-4 tablet-grid-3 mobile-grid-2">
+                <div class="card">Wide: 4 columns</div>
+                <div class="card">Tablet: 3 columns</div>
+                <div class="card">Mobile: 2 columns</div>
+                <div class="card">Responsive grid</div>
+            </div>
+
+            <h3>Width by breakpoint</h3>
+            <div class="card w-50 tablet-w-75 mobile-w-100">50% wide, then 75%, then 100%</div>
+
+            <h3>Other responsive modifiers</h3>
+            <p>Use <code>tablet-flex-column</code> or <code>mobile-flex-column</code> to change flex direction at a responsive step; use <code>tablet-h-auto</code> and <code>mobile-h-auto</code> to reset height. Responsive width, height, gap, alignment, and grid span classes are also available. For <code>.grid-12</code>, use spans from 1 to 8 at tablet width and 1 to 4 on mobile, or use <code>*-col-span-full</code> to fill the row.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Liner CSS</p>
+    </footer>
+</body>
+
+</html>

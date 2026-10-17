@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#121212" />
+    <title>ダッシュボード | Liner UI Demo</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../layout.css" />
+    <link rel="stylesheet" href="../ui.css" />
+</head>
+
+<body>
+    <div class="ui-app-shell">
+        <aside class="ui-sidebar h-screen" aria-label="ダッシュボードサイドバー">
+            <a class="ui-brand" href="dashboard.html">
+                <span class="ui-brand-mark" aria-hidden="true">L</span>
+                <span class="ui-brand-name">LINER<small class="ui-brand-caption">ANALYTICS</small></span>
+            </a>
+
+            <div class="ui-workspace-switcher min-w-0">
+                <span class="ui-avatar ui-avatar--square ui-avatar-blue" aria-hidden="true">B</span>
+                <span class="ui-truncate">Bluebird Studio</span>
+                <svg class="ui-workspace-icon" viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="m4 6 4 4 4-4" />
+                </svg>
+            </div>
+
+            <nav class="ui-sidebar-nav" aria-label="メインナビゲーション">
+                <span class="ui-nav-caption">ワークスペース</span>
+                <a class="ui-nav-link" href="#overview" aria-current="page">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+                        <rect x="2.5" y="2.5" width="6" height="6" rx="1" />
+                        <rect x="11.5" y="2.5" width="6" height="6" rx="1" />
+                        <rect x="2.5" y="11.5" width="6" height="6" rx="1" />
+                        <rect x="11.5" y="11.5" width="6" height="6" rx="1" />
+                    </svg>
+                    <span>概要</span>
+                </a>
+                <a class="ui-nav-link" href="#reports">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M3 16.5h14M4.5 13l3.3-3.5 2.7 2 5-6" />
+                        <path d="M12.5 5.5h3v3" />
+                    </svg>
+                    <span>レポート</span>
+                </a>
+                <a class="ui-nav-link" href="#orders">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="m10 2.5 7 3.7v7.6l-7 3.7-7-3.7V6.2l7-3.7Z" />
+                        <path d="m3.3 6.4 6.7 3.7 6.7-3.7M10 10.1v7.1" />
+                    </svg>
+                    <span>注文</span>
+                </a>
+                <a class="ui-nav-link" href="#customers">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+                        <circle cx="7" cy="7" r="3" />
+                        <path d="M1.8 17c.5-3 2.2-4.5 5.2-4.5s4.7 1.5 5.2 4.5M13 4.5a2.8 2.8 0 0 1 0 5.4m1.2 2.8c2.1.4 3.3 1.8 3.7 4.3" />
+                    </svg>
+                    <span>顧客</span>
+                </a>
+                <a class="ui-nav-link" href="projects.html">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+                        <rect x="3" y="3" width="5" height="5" />
+                        <rect x="12" y="3" width="5" height="5" />
+                        <rect x="3" y="12" width="5" height="5" />
+                        <rect x="12" y="12" width="5" height="5" />
+                    </svg>
+                    <span>プロジェクト</span>
+                </a>
+                <a class="ui-nav-link" href="inbox.html">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+                        <rect x="2.5" y="4" width="15" height="12" />
+                        <path d="m3 5 7 5.5L17 5" />
+                    </svg>
+                    <span>受信トレイ</span>
+                </a>
+
+                <span class="ui-nav-caption">管理</span>
+                <a class="ui-nav-link" href="settings.html">
+                    <svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+                        <circle cx="10" cy="10" r="3" />
+                        <path d="M10 1.8v2M10 16.2v2M18.2 10h-2M3.8 10h-2m14-5.8-1.4 1.4m-8.8 8.8-1.4 1.4m12 0-1.4-1.4M5.2 5.2 3.8 3.8" />
+                    </svg>
+                    <span>設定</span>
+                </a>
+            </nav>
+
+            <div class="ui-status-summary">
+                <span class="ui-status-dot" aria-hidden="true"></span>
+                <span>すべてのシステムが正常です</span>
+            </div>
+
+            <a class="ui-profile-menu" href="#profile">
+                <span class="ui-avatar ui-avatar-purple" aria-hidden="true">花</span>
+                <span class="ui-profile-details">山田 花子<small>オーナー</small></span>
+                <span aria-hidden="true">•••</span>
+            </a>
+        </aside>
+
+        <main class="ui-app-main min-w-0" id="overview">
+            <header class="ui-topbar">
+                <div class="ui-context-line">
+                    <span>Bluebird Studio</span>
+                    <span aria-hidden="true">/</span>
+                    <strong>概要</strong>
+                </div>
+
+                <div class="ui-action-group">
+                    <form class="ui-search-field" role="search">
+                        <label class="visually-hidden" for="dashboard-search">ダッシュボードを検索</label>
+                        <svg class="ui-search-icon" viewBox="0 0 20 20" aria-hidden="true">
+                            <circle cx="8.5" cy="8.5" r="5.5" />
+                            <path d="m13 13 4 4" />
+                        </svg>
+                        <input class="ui-search-input" id="dashboard-search" type="search" placeholder="検索" />
+                    </form>
+
+                    <button class="ui-icon-button ui-icon-button--large" type="button" aria-label="通知">
+                        <svg viewBox="0 0 20 20" aria-hidden="true">
+                            <path d="M15.5 7.5a5.5 5.5 0 0 0-11 0c0 6-2 6-2 7.5h15c0-1.5-2-1.5-2-7.5ZM8 17h4" />
+                        </svg>
+                        <span class="ui-notification-dot" aria-hidden="true"></span>
+                    </button>
+
+                    <a class="ui-avatar ui-avatar-purple" href="#profile" aria-label="山田 花子のプロフィール">花</a>
+                </div>
+            </header>
+
+            <div class="ui-content-stack--wide">
+                <section class="ui-heading-row ui-heading-row--end" aria-labelledby="page-title">
+                    <div>
+                        <p class="ui-eyebrow">土曜日、2026年10月17日</p>
+                        <h1 class="ui-display-title" id="page-title">おかえりなさい、花子さん</h1>
+                        <p class="ui-description">今日のビジネス状況をまとめました。</p>
+                    </div>
+                    <div class="ui-action-group">
+                        <button class="ui-dropdown-trigger" type="button">
+                            今月
+                        </button>
+                        <button class="ui-button-primary ui-button--large" type="button">レポートを作成</button>
+                    </div>
+                </section>
+
+                <section class="grid-4 tablet-grid-2 mobile-grid-2 gap-1 m-0" aria-label="主要指標">
+                    <article class="ui-stat-card min-w-0">
+                        <div><span>総売上</span><span>今月</span></div>
+                        <strong>¥8,420,500</strong>
+                        <div>
+                            <span class="ui-trend ui-state--success"><span aria-hidden="true">↗</span> 12.8%</span>
+                            <span>前月比</span>
+                            <svg class="ui-sparkline" viewBox="0 0 88 28" aria-hidden="true">
+                                <path d="M2 22 14 18 25 20 37 11 49 15 61 8 73 10 86 3" />
+                            </svg>
+                        </div>
+                    </article>
+
+                    <article class="ui-stat-card min-w-0">
+                        <div><span>アクティブユーザー</span><span>今月</span></div>
+                        <strong>24,892</strong>
+                        <div>
+                            <span class="ui-trend ui-state--success"><span aria-hidden="true">↗</span> 8.2%</span>
+                            <span>前月比</span>
+                            <svg class="ui-sparkline" viewBox="0 0 88 28" aria-hidden="true">
+                                <path d="M2 20 14 17 25 19 37 13 49 14 61 8 73 12 86 5" />
+                            </svg>
+                        </div>
+                    </article>
+
+                    <article class="ui-stat-card min-w-0">
+                        <div><span>注文数</span><span>今月</span></div>
+                        <strong>1,284</strong>
+                        <div>
+                            <span class="ui-trend ui-state--success"><span aria-hidden="true">↗</span> 4.6%</span>
+                            <span>前月比</span>
+                            <svg class="ui-sparkline" viewBox="0 0 88 28" aria-hidden="true">
+                                <path d="M2 21 14 19 25 14 37 18 49 10 61 12 73 6 86 4" />
+                            </svg>
+                        </div>
+                    </article>
+
+                    <article class="ui-stat-card min-w-0">
+                        <div><span>コンバージョン率</span><span>今月</span></div>
+                        <strong>3.64%</strong>
+                        <div>
+                            <span class="ui-trend ui-state--danger"><span aria-hidden="true">↘</span> 0.4%</span>
+                            <span>前月比</span>
+                            <svg class="ui-sparkline ui-state--danger" viewBox="0 0 88 28" aria-hidden="true">
+                                <path d="m2 5 12 3 11-1 12 6 12-2 12 6 12-1 13 8" />
+                            </svg>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="grid-12 gap-1 m-0 y-start" aria-label="分析と最近の活動">
+                    <article class="ui-panel ui-panel--spacious min-w-0 col-span-8 tablet-col-span-5 mobile-col-span-full" id="reports">
+                        <div class="ui-heading-row">
+                            <div>
+                                <p class="ui-eyebrow">パフォーマンス</p>
+                                <h2 class="ui-panel-title">売上の推移</h2>
+                            </div>
+                            <a class="ui-more-link" href="#reports">詳細を見る</a>
+                        </div>
+
+                        <div class="ui-chart-summary">
+                            <strong>¥8,420,500</strong>
+                            <span class="ui-trend ui-state--success"><span aria-hidden="true">↗</span> 12.8%</span>
+                            <span>前月より</span>
+                        </div>
+
+                        <figure class="ui-chart">
+                            <svg viewBox="0 0 700 250" role="img" aria-labelledby="revenue-chart-title revenue-chart-description">
+                                <title id="revenue-chart-title">月間売上の推移</title>
+                                <desc id="revenue-chart-description">1月から10月にかけて売上が全体的に増加しています。</desc>
+                                <defs>
+                                    <linearGradient id="revenue-fill" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="var(--color-accent-1)" stop-opacity="0.32" />
+                                        <stop offset="100%" stop-color="var(--color-accent-1)" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <g class="ui-chart-grid-lines">
+                                    <path d="M30 30H680M30 78H680M30 126H680M30 174H680M30 222H680" />
+                                </g>
+                                <path class="ui-chart-area" d="M30 190 C70 178 78 168 102 172 S150 152 174 160 S220 132 246 144 S294 123 318 130 S366 96 390 112 S438 105 462 92 S510 74 534 83 S582 55 606 66 S654 38 680 43 V222 H30Z" />
+                                <path class="ui-chart-line" d="M30 190 C70 178 78 168 102 172 S150 152 174 160 S220 132 246 144 S294 123 318 130 S366 96 390 112 S438 105 462 92 S510 74 534 83 S582 55 606 66 S654 38 680 43" />
+                                <circle class="ui-chart-point" cx="680" cy="43" r="4.5" />
+                            </svg>
+                            <figcaption class="ui-chart-axis-labels"><span>1月</span><span>2月</span><span>3月</span><span>4月</span><span>5月</span><span>6月</span><span>7月</span><span>8月</span><span>9月</span><span>10月</span></figcaption>
+                        </figure>
+
+                        <div class="ui-chart-legend"><span><i aria-hidden="true"></i> 売上</span><span>目標を上回っています</span></div>
+                    </article>
+
+                    <article class="ui-panel ui-panel--spacious min-w-0 col-span-4 tablet-col-span-3 mobile-col-span-full" id="customers">
+                        <div class="ui-heading-row">
+                            <div>
+                                <p class="ui-eyebrow">チャネル</p>
+                                <h2 class="ui-panel-title">流入元</h2>
+                            </div>
+                            <button class="ui-icon-button ui-icon-button--small" type="button" aria-label="流入元のその他の操作">•••</button>
+                        </div>
+
+                        <div class="layout-stack gap-1 m-0">
+                            <div>
+                                <div class="ui-value-row ui-value-row--small"><span>オーガニック検索</span><strong>42%</strong></div>
+                                <progress class="ui-progress-bar" value="42" max="100" aria-label="オーガニック検索 42%">42%</progress>
+                            </div>
+                            <div>
+                                <div class="ui-value-row ui-value-row--small"><span>ダイレクト</span><strong>28%</strong></div>
+                                <progress class="ui-progress-bar ui-state--info" value="28" max="100" aria-label="ダイレクト 28%">28%</progress>
+                            </div>
+                            <div>
+                                <div class="ui-value-row ui-value-row--small"><span>ソーシャル</span><strong>18%</strong></div>
+                                <progress class="ui-progress-bar ui-state--purple" value="18" max="100" aria-label="ソーシャル 18%">18%</progress>
+                            </div>
+                            <div>
+                                <div class="ui-value-row ui-value-row--small"><span>リファラル</span><strong>12%</strong></div>
+                                <progress class="ui-progress-bar ui-state--warning" value="12" max="100" aria-label="リファラル 12%">12%</progress>
+                            </div>
+                        </div>
+
+                        <div class="ui-value-row ui-value-row--divider"><span>合計セッション</span><strong>18,492</strong></div>
+                    </article>
+
+                    <article class="ui-panel ui-panel--spacious min-w-0 col-span-8 tablet-col-span-5 mobile-col-span-full" id="orders">
+                        <div class="ui-heading-row">
+                            <div>
+                                <p class="ui-eyebrow">注文管理</p>
+                                <h2 class="ui-panel-title">最近の注文</h2>
+                            </div>
+                            <a class="ui-more-link" href="#orders">すべて表示</a>
+                        </div>
+
+                        <div class="ui-scroll-x">
+                            <table class="ui-data-table ui-data-table--compact">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">注文</th>
+                                        <th scope="col">顧客</th>
+                                        <th scope="col">状態</th>
+                                        <th scope="col">金額</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">#ORD-2841</th>
+                                        <td>佐藤 美咲</td>
+                                        <td><span class="ui-badge ui-state--success">完了</span></td>
+                                        <td>¥24,800</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">#ORD-2840</th>
+                                        <td>高橋 健太</td>
+                                        <td><span class="ui-badge ui-state--warning">処理中</span></td>
+                                        <td>¥12,400</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">#ORD-2839</th>
+                                        <td>鈴木 葵</td>
+                                        <td><span class="ui-badge ui-state--success">完了</span></td>
+                                        <td>¥8,900</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">#ORD-2838</th>
+                                        <td>田中 翔</td>
+                                        <td><span class="ui-badge ui-state--neutral">キャンセル</span></td>
+                                        <td>¥16,200</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+
+                    <article class="ui-panel ui-panel--spacious min-w-0 col-span-4 tablet-col-span-3 mobile-col-span-full">
+                        <div class="ui-heading-row">
+                            <div>
+                                <p class="ui-eyebrow">チーム</p>
+                                <h2 class="ui-panel-title">最近のアクティビティ</h2>
+                            </div>
+                            <button class="ui-icon-button ui-icon-button--small" type="button" aria-label="アクティビティのその他の操作">•••</button>
+                        </div>
+
+                        <ol class="ui-feed">
+                            <li class="ui-feed-item">
+                                <span class="ui-avatar ui-avatar-blue ui-avatar--small" aria-hidden="true">美</span>
+                                <div><strong>佐藤さん</strong>が新しい注文を追加しました<time datetime="2026-10-17T10:42">12分前</time></div>
+                            </li>
+                            <li class="ui-feed-item">
+                                <span class="ui-avatar ui-avatar-purple ui-avatar--small" aria-hidden="true">健</span>
+                                <div><strong>高橋さん</strong>が月次レポートを共有しました<time datetime="2026-10-17T10:16">38分前</time></div>
+                            </li>
+                            <li class="ui-feed-item">
+                                <span class="ui-avatar ui-avatar-green ui-avatar--small" aria-hidden="true">葵</span>
+                                <div><strong>鈴木さん</strong>が顧客情報を更新しました<time datetime="2026-10-17T09:51">1時間前</time></div>
+                            </li>
+                        </ol>
+
+                        <a class="ui-more-link ui-more-link--divider" href="#activity">すべてのアクティビティを見る</a>
+                    </article>
+                </section>
+
+                <footer class="ui-footer-row">
+                    <span>最終更新: 2分前</span>
+                    <span>データはデモ用です</span>
+                </footer>
+            </div>
+        </main>
+
+        <nav class="ui-mobile-nav" aria-label="ワークスペース">
+            <a href="dashboard.html#overview" aria-current="page"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/layout-dashboard.svg')" aria-hidden="true"></span><span>概要</span></a>
+            <a href="projects.html#page-title"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/folder.svg')" aria-hidden="true"></span><span>プロジェクト</span></a>
+            <a href="inbox.html#page-title"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/message-2.svg')" aria-hidden="true"></span><span>受信トレイ</span></a>
+            <a href="settings.html#page-title"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/settings.svg')" aria-hidden="true"></span><span>設定</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

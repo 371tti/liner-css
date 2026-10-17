@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#121212" />
+    <title>設定 | Liner UI Demo</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../layout.css" />
+    <link rel="stylesheet" href="../ui.css" />
+</head>
+
+<body>
+    <div class="ui-app-shell">
+        <aside class="ui-sidebar h-screen" aria-label="設定サイドバー">
+            <a class="ui-brand" href="dashboard.html">
+                <span class="ui-brand-mark" aria-hidden="true">L</span>
+                <span class="ui-brand-name">LINER<small class="ui-brand-caption">WORKSPACE</small></span>
+            </a>
+
+            <div class="ui-workspace-switcher min-w-0">
+                <span class="ui-avatar ui-avatar--square ui-avatar-blue" aria-hidden="true">B</span>
+                <span class="ui-truncate">Bluebird Studio</span>
+                <svg class="ui-workspace-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+            </div>
+
+            <nav class="ui-sidebar-nav" aria-label="メインナビゲーション">
+                <span class="ui-nav-caption">ワークスペース</span>
+                <a class="ui-nav-link" href="dashboard.html"><svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="2.5" width="6" height="6" /><rect x="11.5" y="2.5" width="6" height="6" /><rect x="2.5" y="11.5" width="6" height="6" /><rect x="11.5" y="11.5" width="6" height="6" /></svg><span>概要</span></a>
+                <a class="ui-nav-link" href="projects.html"><svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="5" height="5" /><rect x="12" y="3" width="5" height="5" /><rect x="3" y="12" width="5" height="5" /><rect x="12" y="12" width="5" height="5" /></svg><span>プロジェクト</span></a>
+                <a class="ui-nav-link" href="inbox.html"><svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" /><path d="m3 5 7 5.5L17 5" /></svg><span>受信トレイ</span></a>
+                <span class="ui-nav-caption">管理</span>
+                <a class="ui-nav-link" href="settings.html" aria-current="page"><svg class="ui-nav-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3" /><path d="M10 1.8v2M10 16.2v2M18.2 10h-2M3.8 10h-2m14-5.8-1.4 1.4m-8.8 8.8-1.4 1.4m12 0-1.4-1.4M5.2 5.2 3.8 3.8" /></svg><span>設定</span></a>
+            </nav>
+
+            <div class="ui-status-summary"><span class="ui-status-dot" aria-hidden="true"></span><span>すべてのシステムが正常です</span></div>
+            <a class="ui-profile-menu" href="#profile"><span class="ui-avatar ui-avatar-purple" aria-hidden="true">花</span><span class="ui-profile-details">山田 花子<small>オーナー</small></span><span aria-hidden="true">•••</span></a>
+        </aside>
+
+        <main class="ui-app-main min-w-0">
+            <header class="ui-topbar">
+                <div class="ui-context-line"><span>Bluebird Studio</span><span aria-hidden="true">/</span><strong>設定</strong></div>
+                <div class="ui-action-group">
+                    <form class="ui-search-field" role="search">
+                        <label class="visually-hidden" for="settings-search">設定を検索</label>
+                        <svg class="ui-search-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" /><path d="m13 13 4 4" /></svg>
+                        <input class="ui-search-input" id="settings-search" type="search" placeholder="検索" />
+                    </form>
+                    <button class="ui-icon-button ui-icon-button--large" type="button" aria-label="通知"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 7.5a5.5 5.5 0 0 0-11 0c0 6-2 6-2 7.5h15c0-1.5-2-1.5-2-7.5ZM8 17h4" /></svg><span class="ui-notification-dot" aria-hidden="true"></span></button>
+                    <a class="ui-avatar ui-avatar-purple" href="#profile" aria-label="山田 花子のプロフィール">花</a>
+                </div>
+            </header>
+
+            <div class="ui-content-stack--wide">
+                <section class="ui-heading-row ui-heading-row--end" aria-labelledby="page-title">
+                    <div>
+                        <p class="ui-eyebrow">WORKSPACE / PREFERENCES</p>
+                        <h1 class="ui-display-title" id="page-title">設定</h1>
+                        <p class="ui-description">アカウント、通知、ワークスペースの環境を管理します。</p>
+                    </div>
+                    <div class="ui-action-group">
+                        <button class="ui-button-secondary" type="button">変更を破棄</button>
+                        <button class="ui-button-primary ui-button--large" type="button">変更を保存</button>
+                    </div>
+                </section>
+
+                <div class="grid-12 gap-1 m-0 y-start">
+                    <nav class="ui-panel ui-panel--flush layout-stack gap-half col-span-3 tablet-col-span-8 mobile-col-span-full" aria-label="設定カテゴリ">
+                        <a class="ui-nav-link" href="#profile" aria-current="page">プロフィール</a>
+                        <a class="ui-nav-link" href="#notifications">通知</a>
+                        <a class="ui-nav-link" href="#workspace">ワークスペース</a>
+                        <a class="ui-nav-link" href="#security">セキュリティ</a>
+                    </nav>
+
+                    <div class="layout-stack gap-1 col-span-9 tablet-col-span-8 mobile-col-span-full">
+                        <section class="ui-panel ui-panel--spacious" id="profile" aria-labelledby="profile-title">
+                            <div class="ui-heading-row">
+                                <div>
+                                    <p class="ui-eyebrow">YOUR ACCOUNT</p>
+                                    <h2 class="ui-panel-title" id="profile-title">プロフィール</h2>
+                                    <p class="ui-description">チームメンバーに表示される情報です。</p>
+                                </div>
+                                <span class="ui-badge ui-state--success">確認済み</span>
+                            </div>
+                            <form class="layout-stack gap-1 m-0">
+                                <fieldset class="m-0">
+                                    <legend>プロフィール情報</legend>
+                                    <p class="m-0"><label for="profile-name">表示名</label><input id="profile-name" type="text" value="山田 花子" autocomplete="name" /></p>
+                                    <p class="m-0"><label for="profile-email">メールアドレス</label><input id="profile-email" type="email" value="hanako@example.com" autocomplete="email" /></p>
+                                    <p class="m-0"><label for="profile-role">役職</label><input id="profile-role" type="text" value="プロダクトマネージャー" /></p>
+                                    <p class="m-0"><label for="profile-timezone">タイムゾーン</label><select id="profile-timezone"><option>(UTC+09:00) 東京</option><option>(UTC+00:00) ロンドン</option><option>(UTC-08:00) ロサンゼルス</option></select></p>
+                                </fieldset>
+                                <div class="ui-action-group">
+                                    <button class="ui-button-primary" type="submit">プロフィールを更新</button>
+                                    <span class="ui-helper-label">最終更新: 2026年10月12日</span>
+                                </div>
+                            </form>
+                        </section>
+
+                        <section class="ui-panel ui-panel--spacious" id="notifications" aria-labelledby="notifications-title">
+                            <div class="ui-heading-row">
+                                <div>
+                                    <p class="ui-eyebrow">PREFERENCES</p>
+                                    <h2 class="ui-panel-title" id="notifications-title">通知</h2>
+                                    <p class="ui-description">受け取る通知を選択してください。</p>
+                                </div>
+                            </div>
+                            <div class="layout-stack gap-1 m-0">
+                                <div class="ui-separated-row">
+                                    <div><strong>メールの週次サマリー</strong><small class="ui-helper-label">毎週月曜日にプロジェクトの状況をお知らせします。</small></div>
+                                    <label class="ui-switch"><span class="visually-hidden">メールの週次サマリーを受け取る</span><input class="ui-switch-input" type="checkbox" role="switch" checked /><span class="ui-switch-track" aria-hidden="true"></span></label>
+                                </div>
+                                <div class="ui-separated-row">
+                                    <div><strong>担当タスクの更新</strong><small class="ui-helper-label">担当タスクの期限や状態が変わったときに通知します。</small></div>
+                                    <label class="ui-switch"><span class="visually-hidden">担当タスクの更新を受け取る</span><input class="ui-switch-input" type="checkbox" role="switch" checked /><span class="ui-switch-track" aria-hidden="true"></span></label>
+                                </div>
+                                <div class="ui-separated-row">
+                                    <div><strong>製品のお知らせ</strong><small class="ui-helper-label">新機能やメンテナンス情報をお届けします。</small></div>
+                                    <label class="ui-switch"><span class="visually-hidden">製品のお知らせを受け取る</span><input class="ui-switch-input" type="checkbox" role="switch" /><span class="ui-switch-track" aria-hidden="true"></span></label>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="ui-panel ui-panel--spacious" id="workspace" aria-labelledby="workspace-title">
+                            <div class="ui-heading-row">
+                                <div>
+                                    <p class="ui-eyebrow">TEAM SETTINGS</p>
+                                    <h2 class="ui-panel-title" id="workspace-title">ワークスペース</h2>
+                                    <p class="ui-description">チーム全体に適用する基本情報です。</p>
+                                </div>
+                                <span class="ui-count">12</span>
+                            </div>
+                            <form class="layout-stack gap-1 m-0">
+                                <fieldset class="m-0">
+                                    <legend>基本情報</legend>
+                                    <p class="m-0"><label for="workspace-name">ワークスペース名</label><input id="workspace-name" type="text" value="Bluebird Studio" /></p>
+                                    <p class="m-0"><label for="workspace-view">既定のプロジェクト表示</label><select id="workspace-view"><option>リスト</option><option>ボード</option><option>カレンダー</option></select></p>
+                                </fieldset>
+                                <div class="ui-action-group">
+                                    <button class="ui-button-secondary" type="button">メンバーを招待</button>
+                                    <a class="ui-more-link" href="#security">権限を確認する</a>
+                                </div>
+                            </form>
+                        </section>
+
+                        <section class="ui-panel ui-panel--spacious" id="security" aria-labelledby="security-title">
+                            <div class="ui-heading-row">
+                                <div>
+                                    <p class="ui-eyebrow">SECURITY</p>
+                                    <h2 class="ui-panel-title" id="security-title">セキュリティ</h2>
+                                    <p class="ui-description">アカウントを安全に保つための設定です。</p>
+                                </div>
+                                <span class="ui-badge ui-state--success">保護されています</span>
+                            </div>
+                            <div class="ui-separated-row"><div><strong>二要素認証</strong><small class="ui-helper-label">ログイン時に追加の確認を行います。</small></div><button class="ui-button-secondary" type="button">有効</button></div>
+                        </section>
+
+                        <div class="ui-alert ui-state--danger" role="note">
+                            <span class="ui-alert-mark" aria-hidden="true"></span>
+                            <div><strong>アカウントの削除</strong><p>削除すると、プロフィールと個人設定を復元できません。</p></div>
+                            <button class="ui-button-danger" type="button">削除を開始</button>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="ui-footer-row"><span>設定はこのブラウザーに保存されません</span><span>データはデモ用です</span></footer>
+            </div>
+        </main>
+
+        <nav class="ui-mobile-nav" aria-label="ワークスペース">
+            <a href="dashboard.html#overview"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/layout-dashboard.svg')" aria-hidden="true"></span><span>概要</span></a>
+            <a href="projects.html#page-title"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/folder.svg')" aria-hidden="true"></span><span>プロジェクト</span></a>
+            <a href="inbox.html#page-title"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/message-2.svg')" aria-hidden="true"></span><span>受信トレイ</span></a>
+            <a href="settings.html#page-title" aria-current="page"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/settings.svg')" aria-hidden="true"></span><span>設定</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

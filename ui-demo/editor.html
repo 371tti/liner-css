@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#121212" />
+    <title>コードエディター | Liner UI Demo</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../layout.css" />
+    <link rel="stylesheet" href="../ui.css" />
+</head>
+
+<body>
+    <div class="ui-app-shell">
+        <aside class="ui-sidebar h-screen" aria-label="CODE STUDIO">
+            <a class="ui-brand" href="#page-title"><span class="ui-brand-mark" aria-hidden="true">C</span><span class="ui-brand-name">CODE<small class="ui-brand-caption">STUDIO</small></span></a>
+            <div class="ui-workspace-switcher min-w-0"><span class="ui-avatar ui-avatar--square ui-avatar-blue" aria-hidden="true">W</span><span class="ui-truncate">web-studio</span></div>
+            <nav class="ui-sidebar-nav" aria-label="プロジェクト">
+                <span class="ui-nav-caption">PROJECT</span>
+                <a class="ui-nav-link" href="#files" aria-current="page">エクスプローラー</a>
+                <a class="ui-nav-link" href="#editor">コード</a>
+                <a class="ui-nav-link" href="#preview">プレビュー</a>
+            </nav>
+            <div class="ui-status-summary"><span class="ui-status-dot" aria-hidden="true"></span><span>変更を保存しました</span></div>
+        </aside>
+
+        <main class="ui-app-main min-w-0">
+            <header class="ui-topbar"><div class="ui-context-line"><span>web-studio</span><span aria-hidden="true">/</span><strong>編集</strong></div><div class="ui-action-group"><span class="ui-helper-label">main branch</span></div></header>
+            <div class="ui-content-stack--wide">
+        <section class="layout-stack gap-half m-0">
+            <p class="ui-eyebrow">DEVELOPER TOOLS</p>
+            <div class="ui-heading-row">
+                <div>
+                    <h1 class="ui-display-title" id="page-title">コードエディター</h1>
+                    <p class="ui-description">ファイル一覧、コード、プレビューを並べた開発画面の例です。</p>
+                </div>
+                <div class="ui-action-group"><span class="ui-badge ui-state--success">保存済み</span><button class="ui-button-primary" type="button">実行</button></div>
+            </div>
+        </section>
+
+        <nav class="ui-tabs" aria-label="開いているファイル">
+            <a class="ui-tab" href="#editor" aria-current="page">Welcome.jsx</a>
+            <a class="ui-tab" href="#files">tokens.css</a>
+            <a class="ui-tab" href="#preview">README.md</a>
+        </nav>
+
+        <section class="grid-12 gap-1 m-0 y-start" aria-label="エディター">
+            <aside class="ui-panel ui-panel--spacious col-span-2 tablet-col-span-8 mobile-col-span-full" id="files">
+                <h2 class="ui-panel-title">ファイル</h2>
+                <nav class="layout-stack gap-half m-0" aria-label="プロジェクトファイル">
+                    <a class="ui-nav-link" href="#editor">src/</a>
+                    <a class="ui-nav-link" href="#editor">src/Welcome.jsx</a>
+                    <a class="ui-nav-link" href="#editor">src/components.jsx</a>
+                    <a class="ui-nav-link" href="#editor">styles/</a>
+                    <a class="ui-nav-link" href="#editor">styles/tokens.css</a>
+                    <a class="ui-nav-link" href="#editor">package.json</a>
+                </nav>
+            </aside>
+
+            <article class="ui-panel ui-panel--spacious col-span-7 tablet-col-span-5 mobile-col-span-full" id="editor">
+                <div class="ui-heading-row">
+                    <h2 class="ui-panel-title">Welcome.jsx</h2>
+                    <span class="ui-helper-label">src / Welcome.jsx</span>
+                </div>
+                <pre class="m-0"><code>import { Button } from "./components";
+
+export function WelcomePanel() {
+  return (
+    &lt;section className="welcome"&gt;
+      &lt;p&gt;PROJECT OVERVIEW&lt;/p&gt;
+      &lt;h1&gt;Build something clear.&lt;/h1&gt;
+      &lt;Button variant="primary"&gt;
+        Get started
+      &lt;/Button&gt;
+    &lt;/section&gt;
+  );
+}</code></pre>
+                <div class="ui-footer-row"><span>JavaScript JSX</span><span>UTF-8 · LF</span></div>
+            </article>
+
+            <aside class="ui-panel ui-panel--spacious col-span-3 tablet-col-span-3 mobile-col-span-full" id="preview">
+                <div class="ui-heading-row"><h2 class="ui-panel-title">プレビュー</h2><span class="ui-status-dot" aria-label="接続中"></span></div>
+                <article class="card layout-stack gap-1 m-0">
+                    <p class="ui-eyebrow">PROJECT OVERVIEW</p>
+                    <h3 class="ui-heading-title">Build something clear.</h3>
+                    <p class="ui-description">小さく始めて、必要なものを組み立てます。</p>
+                    <button class="ui-button-primary" type="button">はじめる</button>
+                </article>
+                <p class="ui-helper-label">プレビューはサンプル表示です。</p>
+            </aside>
+        </section>
+
+            </div>
+        </main>
+
+        <nav class="ui-mobile-nav" aria-label="コードエディター">
+            <a href="#files" aria-current="page"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/folder.svg')" aria-hidden="true"></span><span>ファイル</span></a>
+            <a href="#editor"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/code.svg')" aria-hidden="true"></span><span>コード</span></a>
+            <a href="#preview"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/eye.svg')" aria-hidden="true"></span><span>プレビュー</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#121212" />
+    <title>ファイル管理 | Liner UI Demo</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../layout.css" />
+    <link rel="stylesheet" href="../ui.css" />
+</head>
+
+<body>
+    <div class="ui-app-shell">
+        <aside class="ui-sidebar h-screen" aria-label="CLOUD DRIVE">
+            <a class="ui-brand" href="#page-title"><span class="ui-brand-mark" aria-hidden="true">C</span><span class="ui-brand-name">CLOUD<small class="ui-brand-caption">DRIVE</small></span></a>
+            <div class="ui-workspace-switcher min-w-0"><span class="ui-avatar ui-avatar--square ui-avatar-blue" aria-hidden="true">C</span><span class="ui-truncate">Personal files</span></div>
+            <nav class="ui-sidebar-nav" aria-label="ファイル">
+                <span class="ui-nav-caption">MY DRIVE</span>
+                <a class="ui-nav-link" href="#files" aria-current="page">マイファイル</a>
+                <a class="ui-nav-link" href="#drive">共有アイテム</a>
+                <a class="ui-nav-link" href="#files">最近使った項目</a>
+                <a class="ui-nav-link" href="#files">スター付き</a>
+            </nav>
+            <div class="ui-status-summary"><span class="ui-status-dot" aria-hidden="true"></span><span>同期済み</span></div>
+        </aside>
+
+        <main class="ui-app-main min-w-0">
+            <header class="ui-topbar"><div class="ui-context-line"><span>Personal files</span><span aria-hidden="true">/</span><strong>マイドライブ</strong></div><div class="ui-action-group"><button class="ui-button-primary" type="button">アップロード</button></div></header>
+            <div class="ui-content-stack--wide">
+        <section class="layout-stack gap-half m-0">
+            <p class="ui-eyebrow">WORKSPACE STORAGE</p>
+            <div class="ui-heading-row">
+                <div>
+                    <h1 class="ui-display-title" id="page-title">ファイル</h1>
+                    <p class="ui-description">フォルダー、ファイル一覧、容量を確認するストレージ画面です。</p>
+                </div>
+                <div class="ui-action-group"><button class="ui-button-secondary" type="button">フォルダーを作成</button><button class="ui-button-primary" type="button">ファイルをアップロード</button></div>
+            </div>
+        </section>
+
+        <nav class="ui-breadcrumbs" aria-label="フォルダーパス"><a href="#drive">共有ドライブ</a><span aria-hidden="true">/</span><a href="#files">プロダクトチーム</a><span aria-hidden="true">/</span><span aria-current="page">デザイン</span></nav>
+
+        <section class="grid-12 gap-1 m-0 y-start" id="drive">
+            <aside class="layout-stack gap-1 m-0 col-span-3 tablet-col-span-8 mobile-col-span-full">
+                <nav class="ui-panel ui-panel--flush layout-stack gap-half m-0" aria-label="ファイルの場所">
+                    <a class="ui-nav-link" href="#drive" aria-current="page">すべてのファイル</a>
+                    <a class="ui-nav-link" href="#drive">共有アイテム</a>
+                    <a class="ui-nav-link" href="#drive">最近使った項目</a>
+                    <a class="ui-nav-link" href="#drive">お気に入り</a>
+                    <a class="ui-nav-link" href="#drive">ゴミ箱</a>
+                </nav>
+                <article class="ui-panel ui-panel--spacious">
+                    <div class="ui-heading-row"><h2 class="ui-panel-title">ストレージ</h2><span class="ui-helper-label">68%</span></div>
+                    <progress class="ui-progress-bar ui-state--purple w-100" value="68" max="100" aria-label="ストレージ使用量">68%</progress>
+                    <p class="ui-helper-label">17.2 GB / 25 GB</p>
+                    <a class="ui-more-link" href="#files">プランを見る</a>
+                </article>
+            </aside>
+
+            <article class="ui-panel ui-panel--spacious col-span-9 tablet-col-span-8 mobile-col-span-full" id="files">
+                <div class="ui-heading-row"><div><p class="ui-eyebrow">DESIGN FOLDER</p><h2 class="ui-panel-title">デザイン</h2></div><form class="ui-search-field" role="search"><label class="visually-hidden" for="file-search">ファイルを検索</label><input class="ui-search-input" id="file-search" type="search" placeholder="ファイルを検索" /></form></div>
+                <nav class="ui-tabs" aria-label="ファイル表示"><a class="ui-tab" href="#files" aria-current="page">すべて</a><a class="ui-tab" href="#files">ドキュメント</a><a class="ui-tab" href="#files">画像</a></nav>
+                <div class="ui-scroll-x">
+                    <table class="ui-data-table ui-data-table--compact">
+                        <thead><tr><th scope="col"><span class="visually-hidden">選択</span></th><th scope="col">名前</th><th scope="col">更新日時</th><th scope="col">サイズ</th><th scope="col">共有</th></tr></thead>
+                        <tbody>
+                            <tr><td><input type="checkbox" aria-label="ブランド素材を選択" /></td><th scope="row">ブランド素材</th><td>今日 10:24</td><td>—</td><td>チーム</td></tr>
+                            <tr><td><input type="checkbox" aria-label="ホーム画面案を選択" /></td><th scope="row">ホーム画面案.fig</th><td>今日 09:12</td><td>8.4 MB</td><td>チーム</td></tr>
+                            <tr><td><input type="checkbox" aria-label="デザイン仕様を選択" /></td><th scope="row">デザイン仕様.pdf</th><td>昨日 16:40</td><td>2.1 MB</td><td>限定</td></tr>
+                            <tr><td><input type="checkbox" aria-label="アイコンセットを選択" /></td><th scope="row">アイコンセット.svg</th><td>10月15日</td><td>640 KB</td><td>チーム</td></tr>
+                            <tr><td><input type="checkbox" aria-label="レビュー記録を選択" /></td><th scope="row">レビュー記録.docx</th><td>10月12日</td><td>420 KB</td><td>限定</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <nav class="ui-pagination" aria-label="ファイル一覧のページ"><span>5件中 1–5件</span><div><a class="ui-pagination-link" href="#files" aria-current="page">1</a><a class="ui-pagination-link" href="#files">2</a><a class="ui-pagination-link" href="#files">次へ</a></div></nav>
+            </article>
+        </section>
+
+            </div>
+        </main>
+
+        <nav class="ui-mobile-nav" aria-label="ファイル管理">
+            <a href="#files" aria-current="page"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/folder.svg')" aria-hidden="true"></span><span>ファイル</span></a>
+            <a href="#drive"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/link.svg')" aria-hidden="true"></span><span>共有</span></a>
+            <a href="#files"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/history.svg')" aria-hidden="true"></span><span>最近</span></a>
+            <a href="#files"><span class="ui-mobile-nav-icon" style="--ui-mobile-icon: url('../static/icons/star.svg')" aria-hidden="true"></span><span>スター</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>
