@@ -7,7 +7,8 @@ a.ui-avatar::after,
 .ui-nav-link::after,
 .ui-mobile-nav a::after,
 a.ui-button-primary::after,
-a.ui-button-secondary::after {
+a.ui-button-secondary::after,
+.ui-map-brand::after {
     content: none;
 }
 
@@ -764,15 +765,6 @@ input[type="search"].ui-search-input,
 
 .ui-timeline time {
     margin-inline-start: 0.35rem;
-}
-
-.ui-empty-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 14rem;
-    text-align: center;
 }
 
 .ui-empty-state > h3 {
@@ -1959,7 +1951,8 @@ a.ui-avatar {
     width: 2.5rem;
 }
 
-.ui-track-row time {
+.ui-track-row time,
+.ui-player-timeline time:last-child {
     text-align: end;
 }
 
@@ -1980,6 +1973,12 @@ a.ui-avatar {
 }
 
 .ui-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 14rem;
+    text-align: center;
     margin: 0;
     padding: 1.25rem;
     border-block-end: var(--border-width) solid var(--color-border);
@@ -2027,10 +2026,6 @@ a.ui-avatar {
     width: 100%;
     color: var(--color-text-0);
     font-size: 0.62rem;
-}
-
-.ui-player-timeline time:last-child {
-    text-align: end;
 }
 
 .ui-player-controls {
@@ -2311,10 +2306,6 @@ a.ui-avatar {
     width: max-content;
     padding: 0.45rem 0.7rem;
     text-decoration: none;
-}
-
-.ui-map-brand::after {
-    content: none;
 }
 
 .ui-map-brand-mark {
@@ -2741,16 +2732,14 @@ a.ui-avatar {
         display: none;
     }
 
-    .ui-track-copy strong {
+    .ui-track-copy strong,
+    .ui-player-track-copy strong {
         font-size: 0.68rem;
     }
 
-    .ui-track-copy span {
+    .ui-track-copy span,
+    .ui-player-track-copy span {
         font-size: 0.58rem;
-    }
-
-    .ui-now-playing {
-        justify-content: center;
     }
 
     .ui-now-playing-layout {
@@ -2794,14 +2783,6 @@ a.ui-avatar {
 
     .ui-player-cover {
         width: 2.7rem;
-    }
-
-    .ui-player-track-copy strong {
-        font-size: 0.68rem;
-    }
-
-    .ui-player-track-copy span {
-        font-size: 0.58rem;
     }
 
     .ui-player-main {

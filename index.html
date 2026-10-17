@@ -1,45 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Liner CSS</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="HTMLの基本スタイル、レスポンシブなレイアウト、再利用できるUI部品をまとめたCSSライブラリです。" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#121212" />
+    <title>Liner CSS — HTML・レイアウト・UI</title>
+    <link rel="stylesheet" href="css/optimized/style.css" />
+    <link rel="stylesheet" href="css/optimized/layout.css" />
+    <link rel="stylesheet" href="css/optimized/ui.css" />
 </head>
 
 <body>
-    <main>
-        <article>
-            <header>
-                <h1>Liner CSS</h1>
-                <ul>
-                    <li>published: <time datetime="2026-10-16">2026-10-16</time></li>
-                    <li>CSS</li>
-                </ul>
-            </header>
-
-            <p><abbr title="HyperText Markup Language">HTML</abbr>の標準要素に統一感のある見た目を与えるスタイルシートです。文章、リスト、表、フォームなどの基本的な表示を整えます。色や余白などは<abbr title="Cascading Style Sheets">CSS</abbr>変数から簡単に調整できます。
-                <a href="/component.html">コンポーネント一覧</a>
-                <a href="/layout.html">レイアウトクラス</a>
-                <a href="/DESIGN_RULES.md">デザイン規則</a>
-                <a href="/ui-demo/dashboard.html">ダッシュボードUIデモ</a>
-                <a href="/ui-demo/components.html">UIパターンデモ</a>
-                <a href="/ui-demo/projects.html">プロジェクト管理UIデモ</a>
-                <a href="/ui-demo/inbox.html">受信トレイUIデモ</a>
-                <a href="/ui-demo/settings.html">設定画面UIデモ</a>
-                <a href="/ui-demo/editor.html">コードエディターUI</a>
-                <a href="/ui-demo/map.html">地図UI</a>
-                <a href="/ui-demo/media.html">メディアUI</a>
-                <a href="/ui-demo/shop.html">ショップUI</a>
-                <a href="/ui-demo/files.html">ファイル管理UI</a>
-                <a href="/ui-demo/travel.html">旅行予約UI</a>
-                <a href="/THIRD_PARTY_NOTICES.md">サードパーティライセンス</a>
+    <main class="layout-container-wide layout-stack">
+        <header class="w-100">
+            <p class="ui-eyebrow">HTML / LAYOUT / UI</p>
+            <h1 class="ui-display-title">Liner CSS</h1>
+            <p class="ui-description">
+                HTMLの基本要素から複雑なレイアウト、アプリケーションUIまでを組み立てるためのCSSライブラリです。
+                色・文字・余白などはCSS変数で調整できます。
             </p>
+            <nav class="layout-cluster m-0" aria-label="主なページ">
+                <a href="article.html">記事サンプル（style.cssのみ）</a>
+                <a href="component.html">HTML要素のスタイル</a>
+                <a href="layout.html">レイアウトクラス</a>
+                <a href="ui-demo/components.html">UIパターン</a>
+            </nav>
+        </header>
 
-            <footer>by 371tti</footer>
-        </article>
+        <section class="ui-divided-section" aria-labelledby="start-title">
+            <div class="ui-heading-row">
+                <div>
+                    <p class="ui-eyebrow">GET STARTED</p>
+                    <h2 class="ui-heading-title" id="start-title">3つのレイヤーから使う</h2>
+                </div>
+                <p class="ui-description">まず基本のHTMLを整え、必要なページにレイアウトとUI部品を加えます。</p>
+            </div>
+
+            <div class="grid-auto">
+                <article class="ui-panel">
+                    <p class="ui-eyebrow">01 / HTML</p>
+                    <h3 class="ui-panel-title"><a href="component.html">HTML要素の基本スタイル</a></h3>
+                    <p class="ui-description">見出し、本文、リンク、リスト、表、フォームなど、標準要素の見た目を確認できます。</p>
+                </article>
+
+                <article class="ui-panel">
+                    <p class="ui-eyebrow">02 / LAYOUT</p>
+                    <h3 class="ui-panel-title"><a href="layout.html">レイアウトクラス</a></h3>
+                    <p class="ui-description">Grid、Flex、入れ子、幅、高さ、間隔、整列、2段階のレスポンシブを試せます。</p>
+                </article>
+
+                <article class="ui-panel">
+                    <p class="ui-eyebrow">03 / COMPONENTS</p>
+                    <h3 class="ui-panel-title"><a href="ui-demo/components.html">再利用できるUIパターン</a></h3>
+                    <p class="ui-description">ナビゲーション、通知、バッジ、スイッチ、一覧、カレンダーなどを集めています。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="ui-divided-section" aria-labelledby="apps-title">
+            <div class="ui-heading-row">
+                <div>
+                    <p class="ui-eyebrow">APPLICATION DEMOS</p>
+                    <h2 class="ui-heading-title" id="apps-title">独立したアプリケーションUI</h2>
+                </div>
+                <p class="ui-description">それぞれ別のアプリとして、画面構成やスマートフォンでの操作を試しています。</p>
+            </div>
+
+            <div class="grid-auto">
+                <article class="ui-panel">
+                    <p class="ui-eyebrow">ANALYTICS</p>
+                    <h3 class="ui-panel-title"><a href="ui-demo/dashboard.html">ダッシュボード</a></h3>
+                    <p class="ui-description">集計カード、グラフ、注文やアクティビティの一覧。</p>
+                </article>
+
+                <article class="ui-panel">
+                    <p class="ui-eyebrow">PROJECTS</p>
+                    <h3 class="ui-panel-title"><a href="ui-demo/projects.html">プロジェクト管理</a></h3>
+                    <p class="ui-description">進行状況、担当者、期限をまとめて確認する作業画面。</p>
+                </article>
+
+                <article class="ui-panel">
+                    <p class="ui-eyebrow">MESSAGES</p>
+                    <h3 class="ui-panel-title"><a href="ui-demo/inbox.html">受信トレイ</a></h3>
+                    <p class="ui-description">メッセージ一覧と選択中の会話を並べた画面。</p>
+                </article>
+
+                <article class="ui-panel">
+                    <p class="ui-eyebrow">PREFERENCES</p>
+                    <h3 class="ui-panel-title"><a href="ui-demo/settings.html">設定</a></h3>
+                    <p class="ui-description">プロフィール、通知、ワークスペース、セキュリティの設定。</p>
+                </article>
+
+                <article class="ui-panel">
+                    <p class="ui-eyebrow">DEVELOPMENT</p>
+                    <h3 class="ui-panel-title"><a href="ui-demo/editor.html">コードエディター</a></h3>
+                    <p class="ui-description">ファイルツリー、コード編集、プレビューをまとめた画面。</p>
+                </article>
+
+                <article class="ui-panel">
+                    <p class="ui-eyebrow">MAP</p>
+                    <h3 class="ui-panel-title"><a href="ui-demo/map.html">地図</a></h3>
+                    <p class="ui-description">地図を全画面に広げ、検索や場所の情報を重ねた画面。</p>
+                </article>
+
+                <article class="ui-panel">
+                    <p class="ui-eyebrow">MUSIC</p>
+                    <h3 class="ui-panel-title"><a href="ui-demo/media.html">音楽プレーヤー</a></h3>
+                    <p class="ui-description">ライブラリ、検索、再生キュー、再生中画面を切り替えます。</p>
+                </article>
+
+                <article class="ui-panel">
+                    <p class="ui-eyebrow">COMMERCE</p>
+                    <h3 class="ui-panel-title"><a href="ui-demo/shop.html">オンラインショップ</a></h3>
+                    <p class="ui-description">商品一覧、商品情報、カートを組み合わせた販売画面。</p>
+                </article>
+
+                <article class="ui-panel">
+                    <p class="ui-eyebrow">STORAGE</p>
+                    <h3 class="ui-panel-title"><a href="ui-demo/files.html">ファイル管理</a></h3>
+                    <p class="ui-description">フォルダー、ファイル一覧、検索、ストレージ状況を表示します。</p>
+                </article>
+
+                <article class="ui-panel">
+                    <p class="ui-eyebrow">TRAVEL</p>
+                    <h3 class="ui-panel-title"><a href="ui-demo/travel.html">旅行予約</a></h3>
+                    <p class="ui-description">移動条件、候補の比較、旅程の概要をまとめた予約画面。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="ui-divided-section" aria-labelledby="docs-title">
+            <div class="ui-heading-row">
+                <div>
+                    <p class="ui-eyebrow">DOCUMENTATION</p>
+                    <h2 class="ui-heading-title" id="docs-title">設計と使い方</h2>
+                </div>
+            </div>
+
+            <div class="grid-auto">
+                <article class="ui-panel">
+                    <h3 class="ui-panel-title"><a href="DESIGN_RULES.md">デザイン規則</a></h3>
+                    <p class="ui-description">CSSの役割分担、クラス設計、レスポンシブ、操作性の共通ルール。</p>
+                </article>
+                <article class="ui-panel">
+                    <h3 class="ui-panel-title"><a href="README.md">編集と最適化</a></h3>
+                    <p class="ui-description">編集用CSSの場所と、Cargoで最適化済みCSSを生成する手順。</p>
+                </article>
+                <article class="ui-panel">
+                    <h3 class="ui-panel-title"><a href="THIRD_PARTY_NOTICES.md">ライセンス表記</a></h3>
+                    <p class="ui-description">利用しているアイコンなどのライセンス情報。</p>
+                </article>
+            </div>
+        </section>
     </main>
+
+    <footer class="layout-container-wide">
+        <p>© 2026 Liner CSS · by 371tti</p>
+    </footer>
 </body>
 
 </html>

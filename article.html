@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Liner CSSのstyle.cssだけで整えた、素朴な記事ページのサンプルです。" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#121212" />
+    <title>記事サンプル — Liner CSS</title>
+    <link rel="stylesheet" href="css/optimized/style.css" />
+</head>
+
+<body>
+    <main>
+        <article>
+            <header>
+                <h1>小さなCSSライブラリを育てる</h1>
+                <ul>
+                    <li>公開日: <time datetime="2026-10-17">2026-10-17</time></li>
+                    <li>CSS</li>
+                    <li>デザイン</li>
+                </ul>
+            </header>
+
+            <p>
+                <abbr title="Cascading Style Sheets">CSS</abbr>でページを整えるときは、まず見出しや段落、リンクなどの
+                <abbr title="HyperText Markup Language">HTML</abbr>要素そのものに基本のスタイルを用意しておくと、
+                特別なクラスを増やさずに記事を組み立てられます。
+            </p>
+
+            <h2>文章の構造をそのまま使う</h2>
+            <p>
+                記事のタイトルには見出しを、本文には段落を使います。話題が変わる場所には小見出しを置き、
+                関連する内容はリストにまとめます。内容に合った要素を選ぶだけで、読みやすい骨組みになります。
+            </p>
+
+            <blockquote>
+                よい基本スタイルは、書き手が内容に集中できるように、HTMLの意味を見た目へつなげます。
+            </blockquote>
+
+            <h2>ページごとのCSSを足さずに仕上げる</h2>
+            <p>
+                このページが読み込んでいるのは <code>style.css</code> だけです。
+                レイアウト専用クラスやUI部品用クラスを使わず、HTMLの基本要素だけで記事の形を作っています。
+            </p>
+
+            <ol>
+                <li>見出しで内容を区切る</li>
+                <li>段落で本文を書く</li>
+                <li>必要に応じて引用やリストを使う</li>
+            </ol>
+
+            <footer>
+                <address>by 371tti</address>
+                <p><a href="index.html">Liner CSS のトップへ戻る</a></p>
+            </footer>
+        </article>
+    </main>
+</body>
+
+</html>
